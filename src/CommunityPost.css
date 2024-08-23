@@ -1,0 +1,130 @@
+
+
+.community-post-container {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.community-post-container header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.community-post-container header h1 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.community-post-back-button, .community-post-list-button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #000;
+    cursor: pointer;
+}
+
+.community-post-video-upload {
+    background-color: #f6f5f5;
+    padding: 20px 40px;
+}
+
+.community-post-video-upload img{
+    width: 70px;
+    height: 70px;
+    padding:0 auto;
+}
+
+.community-post-title{
+    height: 50px;
+    font-weight: bold;
+    background-color: #f6f5f5;
+    text-align: left;
+}
+
+.community-post-title label{
+    padding-top: 20px; 
+    padding-left:20px;
+    display: block; 
+}
+
+.community-post-description {
+    border-bottom: 1px solid #ddd;
+}
+
+.community-post-description-input input {
+    width: 100%;
+    height: 50px;
+    outline:none;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+    padding-left:20px;
+}
+
+.community-post-detail-item {
+    text-align: left;
+    font-weight: bold;
+    padding-top:20px;
+    padding-left:20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.community-post-detail-item select {
+    width: 70%;
+    height:40px;
+    padding-left:50px;
+    outline:none;
+    border: none;
+    color: #aaaaaa;
+}
+.community-post-detail-item input {
+    width: 70%;
+    height:100px;
+    outline:none;
+    border: none;
+    font-size: 14px;
+    color: #aaaaaa;
+}
+
+
+.community-post-submitbutton button{
+    width:80%;
+    margin: 10px 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #a988eb;
+    background-color: #fff;
+    border-radius: 10px; 
+    border-color: #a988eb;
+}
+
+
+.community-post-buttons {
+    position: absolute;
+    top: 600px; 
+    left: 50%;
+    transform: translateX(-50%); 
+    display: flex;
+    justify-content: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+    border-radius: 30px; 
+    background-color: #b7b7b7;
+}
+
+.community-post-button {
+    color:#fff;
+    background-color: #b7b7b7;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 10px; 
+    border-radius: 30px; 
+}
