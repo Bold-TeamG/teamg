@@ -1,11 +1,13 @@
 import React from 'react';
 import Footer from '../Components/footer';
+import Searchbar from "../Components/Searchbar";
 import '../css/Product.css';
 
 
 const Product = () => {
     return (
     <div className="product-page">
+      <Searchbar />
       <div className="product-container">
         <img src="art.jpg" alt="art" />
             

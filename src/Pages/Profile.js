@@ -1,10 +1,17 @@
 
 import React, { useState } from 'react';
 import '../css/Profile.css';
+import { useNavigate } from 'react-router-dom';
 import Footer from '../Components/footer';
 import Gallery from '../Components/gallery'; 
 
 const Profile = () => {
+  const navigate = useNavigate();
+
+    const handleBackClick = () => {
+        navigate(-1); 
+    };
+
   const [activeTab, setActiveTab] = useState("tab1");
 
   const tabImages = {
@@ -18,9 +25,11 @@ const Profile = () => {
   const galleryClass = `gallery ${activeTab === "tab1" ? "gallery-tab1" : activeTab === "tab2" ? "gallery-tab2" : ""}`;
   return (
     <div className="profile-page">
-      <div className="profile-header">
-          <h2>Jacob West</h2>
-      </div>
+      <div className="account-header">
+            <div className="back-icon" onClick={handleBackClick}>
+                <img src="arrowback.png" alt="戻る"/>
+            </div>
+        </div>
       <div className="profile-container">
 
         <div className = "profile-info">

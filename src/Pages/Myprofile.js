@@ -23,8 +23,9 @@ const Myprofile = () => {
   
   return (
     <div className="myprofile-page">
-      <div className="myprofile-header">
-        <h2>Jacob West</h2>
+      <div className="myaccount-header">
+            <div className="bell-icon"><img src="bell.png" alt="bell"/></div>
+            <div className="cart-icon"><img src="cart.png" alt="cart"/></div>
       </div>
       <div className="myprofile-container">
         <div className="myprofile-info">
