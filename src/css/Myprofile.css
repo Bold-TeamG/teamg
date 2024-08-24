@@ -63,7 +63,15 @@
     border-radius: 5px;
     cursor: pointer;
   }
-  
+  .myprofile-icon {
+    border: 1px solid #ccc;
+  }
+  .myprofile-icon button{
+    background-color: white;
+    width: 25%;
+    outline:none;
+    border: none;
+  }
   .myprofile-actions button:hover {
     background-color: #ddd;
   }
