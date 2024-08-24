@@ -10,10 +10,16 @@ import Myprofile from './Pages/Myprofile';
 import { Route, Routes} from 'react-router-dom';
 
 function App() {
+  const videoLinks = [
+    'https://samplelib.com/lib/preview/mp4/sample-5s.mp4',
+    'https://samplelib.com/lib/preview/mp4/sample-10s.mp4',
+    'https://samplelib.com/lib/preview/mp4/sample-15s.mp4'
+  ];
+
   return (
     <Routes>
       <Route path="/" element={<Search />} />
-      <Route path="/community" element={<Community />} />
+      <Route path="/community" element={<Community　links={videoLinks} />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/myprofile" element={<Myprofile />} />
       <Route path="/productpost" element={<ProductPost />} />

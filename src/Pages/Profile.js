@@ -17,15 +17,15 @@ const Profile = () => {
 
           <div className="profile-stats">
 
-            <div class = "profile-components">
+            <div className = "profile-components">
               <h2>14</h2>
               <h4>Following</h4>
             </div>
-            <div class = "profile-components">
+            <div className = "profile-components">
               <h2>38</h2>
               <h4>Followers</h4>
             </div>
-            <div class = "profile-components">
+            <div className = "profile-components">
               <h2>91</h2>
               <h4>Likes</h4>
             </div>
