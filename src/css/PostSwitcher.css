@@ -1,7 +1,10 @@
 
+.post-switcher-buttons.hide {
+    display: none;
+}
 .post-switcher-buttons{
     position: absolute;
-    top: 600px; 
+    top: 550px; 
     left: 50%;
     transform: translateX(-50%); 
     display: flex;
@@ -23,3 +26,4 @@
     margin: 0 10px; 
     border-radius: 30px; 
 }
+

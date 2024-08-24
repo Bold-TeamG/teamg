@@ -9,6 +9,11 @@
     background-color: white;
     border: 1px solid #ccc;
     border-radius: 10px;
+    height: calc(100vh - 48px);
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
   .profile-info{
     display: flex;

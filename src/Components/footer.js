@@ -11,7 +11,7 @@ export default function Footer() {
                 <p>Community</p>
             </div>
         </Link>
-        <Link to="/">
+        <Link to="/discover">
             <div className = "component">
                 <img src="search.png" alt="search" />
                 <p>Discover</p>

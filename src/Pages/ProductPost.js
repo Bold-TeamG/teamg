@@ -72,8 +72,6 @@ const ProductPost = () => {
         <div className = "product-post-submitbutton">
             <button>List</button>
         </div>
-        
-        <Footer />
     </div>
 
     );

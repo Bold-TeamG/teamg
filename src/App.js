@@ -6,6 +6,7 @@ import Community from './Pages/Community';
 import Profile from './Pages/Profile'; 
 import PostSwitcher from './Pages/PostSwitcher'; 
 import Myprofile from './Pages/Myprofile';
+import Discover from './Pages/Discover';
 import { Route, Routes} from 'react-router-dom';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <Route path="/profile" element={<Profile />} />
       <Route path="/myprofile" element={<Myprofile />} />
       <Route path="/postswitcher" element={<PostSwitcher />} />
+      <Route path="/discover" element={<Discover />} />
     </Routes>
   );
 }
