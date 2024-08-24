@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../Components/footer';
 import '../css/CommunityPost.css';
 
 
@@ -7,7 +8,7 @@ const CommunityPost = () => {
     <div className="community-post-container">
 
         <header>
-            <button className="community-post-back-button">×</button>
+            <button className="community-post-back-button"></button>
             <h1>Post a video</h1>
             <button className="community-post-list-button">List</button>
         </header>
@@ -55,10 +56,8 @@ const CommunityPost = () => {
         <div className = "community-post-submitbutton">
             <button>List</button>
         </div>
-        <div className="community-post-buttons">
-            <button className="community-post-button">Product</button>
-            <button className="community-post-button">Video</button>
-        </div>
+        
+        <Footer />
     </div>
     );
   };

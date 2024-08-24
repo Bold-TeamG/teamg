@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../Components/footer';
 import '../css/ProductPost.css';
 
 
@@ -7,7 +8,7 @@ const ProductPost = () => {
     <div className="product-post-container">
 
         <header>
-            <button className="product-post-back-button">×</button>
+            <button className="product-post-back-button"></button>
             <h1>Sell an item</h1>
             <button className="product-post-list-button">List</button>
         </header>
@@ -72,10 +73,7 @@ const ProductPost = () => {
             <button>List</button>
         </div>
         
-        <div className="product-post-buttons">
-            <button className="product-post-button">Product</button>
-            <button className="product-post-button">Video</button>
-        </div>
+        <Footer />
     </div>
 
     );

@@ -26,6 +26,8 @@
     margin: 0;                  
   }
   .myprofile-header {
+    max-width: 400px;
+    margin: 0 auto;
     text-align: center;
     border-bottom: 1px solid #ccc;
   }
@@ -74,11 +76,6 @@
   }
   .myprofile-actions button:hover {
     background-color: #ddd;
-  }
-  .profile-icon{
-    width: 100%;
-    padding: 30px 0;
-    border-bottom: 1px solid #ccc;
   }
 
   .myprofile-icon img{

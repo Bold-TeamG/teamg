@@ -8,9 +8,9 @@ const Myprofile = () => {
 
   const tabImages = {
     tab1: ["user.jpg", "user.jpg", "user.jpg"],
-    tab2: ["user.jpg", "user.jpg", "user.jpg"],
-    tab3: ["user.jpg", "user.jpg", "user.jpg"],
-    tab4: ["user.jpg", "user.jpg", "user.jpg"],
+    tab2: ["star_white.png", "star_white.png", "star_white.png"],
+    tab3: ["star_black.png", "star_black.png", "star_black.png"],
+    tab4: ["search.png", "search.png", "search.png"],
   };
   const tabIcons = {
     tab1: "items.png",
@@ -19,6 +19,8 @@ const Myprofile = () => {
     tab4: "heart_community.png",
   };
 
+  const galleryClass = `gallery ${activeTab === "tab1" ? "gallery-tab1" : activeTab === "tab2" ? "gallery-tab2"  : activeTab === "tab3" ? "gallery-tab3" : activeTab === "tab4" ? "gallery-tab4" : ""}`;
+  
   return (
     <div className="myprofile-page">
       <div className="myprofile-header">
@@ -66,7 +68,7 @@ const Myprofile = () => {
         </div>
         
         <div className="myprofile-content">
-          <Gallery images={tabImages[activeTab]} />
+          <Gallery images={tabImages[activeTab]} className={galleryClass}/>
         </div>
     
       </div>

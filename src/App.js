@@ -4,8 +4,7 @@ import React from 'react';
 import Search from './Pages/Search'; 
 import Community from './Pages/Community'; 
 import Profile from './Pages/Profile'; 
-import ProductPost from './Pages/ProductPost'; 
-import CommunityPost from './Pages/CommunityPost'; 
+import PostSwitcher from './Pages/PostSwitcher'; 
 import Myprofile from './Pages/Myprofile';
 import { Route, Routes} from 'react-router-dom';
 
@@ -24,8 +23,7 @@ function App() {
       <Route path="/community" element={<Community　links={videoLinks} />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/myprofile" element={<Myprofile />} />
-      <Route path="/productpost" element={<ProductPost />} />
-      <Route path="/communitypost" element={<CommunityPost />} />
+      <Route path="/postswitcher" element={<PostSwitcher />} />
     </Routes>
   );
 }

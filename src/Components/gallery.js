@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Gallery = ({ images }) => {
+const Gallery = ({ images, className  }) => {
   return (
-    <div className="gallery">
+    <div className={className}>
       {images.map((image, index) => (
         <img key={index} src={image} alt={`gallery${index + 1}`} />
       ))}
