@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from './footer';
 import './Myprofile.css';
 
 const Myprofile = () => {
@@ -59,6 +60,7 @@ const Myprofile = () => {
           </div>
       </div>
     </div>
+    <Footer />
     </div>
   );
 };
