@@ -30,6 +30,7 @@
 }
 
 .community-post-video-upload {
+    justify-content: center;
     background-color: #f6f5f5;
     padding: 20px 40px;
 }
@@ -37,7 +38,6 @@
 .community-post-video-upload img{
     width: 70px;
     height: 70px;
-    padding:0 auto;
 }
 
 .community-post-title{
@@ -94,7 +94,7 @@
 
 
 .community-post-submitbutton button{
-    width:80%;
+    width:100%;
     margin: 10px 0;
     padding: 10px 0;
     font-size: 16px;
