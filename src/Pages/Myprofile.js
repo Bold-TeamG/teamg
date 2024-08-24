@@ -1,6 +1,6 @@
 import React from 'react';
-import Footer from './footer';
-import './Myprofile.css';
+import Footer from '../Components/footer';
+import '../css/Myprofile.css';
 
 const Myprofile = () => {
   return (

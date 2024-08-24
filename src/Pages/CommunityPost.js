@@ -1,5 +1,5 @@
 import React from 'react';
-import './CommunityPost.css';
+import '../css/CommunityPost.css';
 
 
 const CommunityPost = () => {
