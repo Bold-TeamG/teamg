@@ -85,6 +85,23 @@ export default function Community({ links }) {
                     <h3>アカウント名</h3>
                     <p>コメントコメントコメント</p>
                 </div>
+                <div className='recoms'>
+                    <img src="https://placehold.jp/150x150.png"
+                        alt="Item"
+                        className="item-icon"
+                        onClick={() => alert('Item icon clicked!')}
+                    />
+                    <img src="https://placehold.jp/150x150.png"
+                        alt="Item"
+                        className="item-icon"
+                        onClick={() => alert('Item icon clicked!')}
+                    />
+                    <img src="https://placehold.jp/150x150.png"
+                        alt="Item"
+                        className="item-icon"
+                        onClick={() => alert('Item icon clicked!')}
+                    />
+                </div>
             </div>
           </div>
         ))}
