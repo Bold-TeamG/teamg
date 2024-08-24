@@ -69,11 +69,13 @@
     cursor: pointer;
   }
   .myprofile-icon {
-    border: 1px solid #ccc;
+    width:100%;
+    display:flex;
+    border: 1px solid #ccc; 
   }
   .myprofile-icon button{
     background-color: white;
-    width: 25%;
+    width: 20%;
     outline:none;
     border: none;
   }
@@ -84,7 +86,6 @@
   .myprofile-icon img{
       width: 30px;
       height: 30px;
-      margin:0 30px;
       object-fit: cover;
   
   }

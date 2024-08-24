@@ -75,8 +75,8 @@
     background-color: #ddd;
   }
   .profile-icon{
+    display:flex;
     width: 100%;
-    padding: 20px 0;
     border-bottom: 1px solid #ccc;
   }
 
