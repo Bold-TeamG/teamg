@@ -1,0 +1,39 @@
+.genreBox {
+    margin-top: 59px;
+    height: calc(100vh - 107px);
+    overflow-y: scroll;
+    padding: 0 5%;
+}
+.genreDesccription {
+    width: 100%;
+    text-wrap: wrap;
+}
+
+.onevoneimages {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 5px;
+}
+.onevoneimages img{
+    width: 30%;
+    height: fit-content;
+    aspect-ratio: 1 / 1;
+    margin: 0;
+}
+
+.keyWords {
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.keyWords p{
+    display: inline-block;
+    border: 1px solid #000;
+    margin: 0;
+    padding: 5px;
+    border-radius: 5px;
+}

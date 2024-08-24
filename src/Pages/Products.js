@@ -6,7 +6,6 @@ const Products = () => {
   return (
     <div className = "products-page">
       <div className = "products-container">
-
         <div class = "products-header">
             <div class="search-bar">
                 <input type="text" placeholder="Search"/>
