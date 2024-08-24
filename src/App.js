@@ -7,6 +7,7 @@ import Profile from './Pages/Profile';
 import PostSwitcher from './Pages/PostSwitcher'; 
 import Myprofile from './Pages/Myprofile';
 import Discover from './Pages/Discover';
+import Products from './Pages/Products';
 import { Route, Routes} from 'react-router-dom';
 
 function App() {
@@ -19,6 +20,8 @@ function App() {
       <Route path="/myprofile" element={<Myprofile />} />
       <Route path="/postswitcher" element={<PostSwitcher />} />
       <Route path="/discover" element={<Discover />} />
+      <Route path="/products" element={<Products />} />
+      
     </Routes>
   );
 }

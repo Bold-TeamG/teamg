@@ -1,0 +1,22 @@
+.products-container {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    max-width: 400px;
+    margin: 0 auto;
+    height: calc(100vh - 60px);
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.products-header{
+    padding:20px 10px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+}
+
+.products{
+    width:400px;
+}
