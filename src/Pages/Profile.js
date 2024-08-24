@@ -1,7 +1,19 @@
-import React from 'react';
+
+import React, { useState } from 'react';
 import '../css/Profile.css';
+import Gallery from '../Components/gallery'; 
 
 const Profile = () => {
+  const [activeTab, setActiveTab] = useState("tab1");
+
+  const tabImages = {
+    tab1: ["user.jpg", "user.jpg", "user.jpg"],
+    tab2: ["user.jpg", "user.jpg", "user.jpg"],
+  };
+  const tabIcons = {
+    tab1: "items.png",
+    tab2: "community_contents.png",
+  };
   return (
     <div className="profile-page">
       <div className="profile-header">
@@ -40,17 +52,21 @@ const Profile = () => {
       
 
         <div className="profile-icon">
-            <img src="items.png" alt="items" />
-            <img src="community_contents.png" alt="community_contents" />
+          {Object.keys(tabIcons).map(tab => (
+            <button
+              key={tab}
+              className={`tab ${activeTab === tab ? "active" : ""}`}
+              onClick={() => setActiveTab(tab)}
+            >
+              <img src={tabIcons[tab]} alt={tab} />
+            </button>
+          ))}
         </div>
-
+        
         <div className="profile-content">
-          <div className="gallery">
-            <img src="user.jpg" alt="gallery1" />
-            <img src="user.jpg" alt="gallery2" />
-            <img src="user.jpg" alt="gallery3" />
-          </div>
-      </div>
+          <Gallery images={tabImages[activeTab]} />
+        </div>
+    
     </div>
     </div>
   );
