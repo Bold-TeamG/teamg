@@ -1,66 +1,76 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Footer from '../Components/footer';
+import Gallery from '../Components/gallery'; 
 import '../css/Myprofile.css';
 
 const Myprofile = () => {
+  const [activeTab, setActiveTab] = useState("tab1");
+
+  const tabImages = {
+    tab1: ["user.jpg", "user.jpg", "user.jpg"],
+    tab2: ["user.jpg", "user.jpg", "user.jpg"],
+    tab3: ["user.jpg", "user.jpg", "user.jpg"],
+    tab4: ["user.jpg", "user.jpg", "user.jpg"],
+  };
+  const tabIcons = {
+    tab1: "items.png",
+    tab2: "community_contents.png",
+    tab3: "heart_items.png",
+    tab4: "heart_community.png",
+  };
+
   return (
     <div className="myprofile-page">
       <div className="myprofile-header">
-          <h2>Jacob West</h2>
+        <h2>Jacob West</h2>
       </div>
       <div className="myprofile-container">
-
-        <div className = "myprofile-info">
+        <div className="myprofile-info">
           <div className="myprofile-picture">
             <img src="user.jpg" alt="profile" />
           </div>
           <h2>Jacob West</h2>
-          <div className = "myprofile-reputation">
-             <img src="star_black.png" alt="star_black" />
-             <img src="star_black.png" alt="star_black" />
-             <img src="star_black.png" alt="star_black" />
-             <img src="star_black.png" alt="star_black" />
-             <img src="star_white.png" alt="star_white" />
+          <div className="myprofile-reputation">
+            {[...Array(4)].map((_, i) => <img key={i} src="star_black.png" alt="star_black" />)}
+            <img src="star_white.png" alt="star_white" />
           </div>
           <div className="myprofile-stats">
-
-            <div class = "myprofile-components">
+            <div className="myprofile-components">
               <h2>14</h2>
               <h4>Following</h4>
             </div>
-            <div class = "myprofile-components">
+            <div className="myprofile-components">
               <h2>38</h2>
               <h4>Followers</h4>
             </div>
-            <div class = "myprofile-components">
+            <div className="myprofile-components">
               <h2>91</h2>
               <h4>Likes</h4>
             </div>
           </div>
-
           <div className="myprofile-actions">
             <button>Edit profile</button>
           </div>
         </div>
-
-      
-
+        
         <div className="myprofile-icon">
-            <img src="items.png" alt="items" />
-            <img src="community_contents.png" alt="community_contents" />
-            <img src="heart_items.png" alt="heart_items" />
-            <img src="heart_community.png" alt="heart_community" />
+          {Object.keys(tabIcons).map(tab => (
+            <button
+              key={tab}
+              className={`tab ${activeTab === tab ? "active" : ""}`}
+              onClick={() => setActiveTab(tab)}
+            >
+              <img src={tabIcons[tab]} alt={tab} />
+            </button>
+          ))}
         </div>
-
+        
         <div className="myprofile-content">
-          <div className="gallery">
-            <img src="user.jpg" alt="gallery1" />
-            <img src="user.jpg" alt="gallery2" />
-            <img src="user.jpg" alt="gallery3" />
-          </div>
+          <Gallery images={tabImages[activeTab]} />
+        </div>
+    
       </div>
-    </div>
-    <Footer />
+      <Footer />
     </div>
   );
 };
