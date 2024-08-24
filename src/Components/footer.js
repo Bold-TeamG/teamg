@@ -17,7 +17,7 @@ export default function Footer() {
                 <p>Discover</p>
             </div>
         </Link>
-        <Link to="/productpost">
+        <Link to="/postswitcher">
             <div className = "component">
                 <img src="plus.png" alt="plus" />
                 <p>Sell</p>

@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import '../css/Profile.css';
+import Footer from '../Components/footer';
 import Gallery from '../Components/gallery'; 
 
 const Profile = () => {
@@ -8,12 +9,13 @@ const Profile = () => {
 
   const tabImages = {
     tab1: ["user.jpg", "user.jpg", "user.jpg"],
-    tab2: ["user.jpg", "user.jpg", "user.jpg"],
+    tab2: ["star_white.png", "star_white.png", "star_white.png"],
   };
   const tabIcons = {
     tab1: "items.png",
     tab2: "community_contents.png",
   };
+  const galleryClass = `gallery ${activeTab === "tab1" ? "gallery-tab1" : activeTab === "tab2" ? "gallery-tab2" : ""}`;
   return (
     <div className="profile-page">
       <div className="profile-header">
@@ -64,10 +66,11 @@ const Profile = () => {
         </div>
         
         <div className="profile-content">
-          <Gallery images={tabImages[activeTab]} />
+          <Gallery images={tabImages[activeTab]} className={galleryClass}/>
         </div>
     
     </div>
+    <Footer />
     </div>
   );
 };
