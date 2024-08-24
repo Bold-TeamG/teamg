@@ -1,0 +1,25 @@
+
+.scroll-view {
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    -ms-overflow-style: none;  /* IE 10+ 用 */
+    scrollbar-width: none;  /* Firefox 用 */
+}
+.scroll-view::-webkit-scrollbar {
+    width: 0px;  /* Chrome, Safari 用 */
+}
+
+.content {
+    width: 100vw;
+    height: 100vh;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    background: #111;
+}
+
+.video {
+    width: 100%;
+    height: 100%;
+}

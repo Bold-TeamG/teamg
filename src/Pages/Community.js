@@ -1,27 +1,8 @@
 import React, { useEffect, useRef, useState, createRef } from 'react';
-import styled from 'styled-components';
 import Footer from '../Components/footer';
+import '../css/Community.css'; // CSSファイルをインポート
 
 export default function Community({ links }) {
-
-    const ScrollView = styled.div`
-        width: 100vw;
-        height: 100dvh;
-        overflow: scroll;
-        scroll-snap-type: y mandatory;
-    `;
-
-    const Content = styled.div`
-        width: 100vw;
-        height: 100dvh;
-        scroll-snap-stop: always;
-        background: #111;
-    `;
-
-    const Video = styled.video`
-        width: 100%;
-        height: 100%;
-    `;
 
     const scrollViewRef = useRef(null);
     const videoRefs = useRef(links.map(() => createRef()));
@@ -58,20 +39,21 @@ export default function Community({ links }) {
         const [muted, setMuted] = useState(true);
 
         return (
-          <ScrollView ref={scrollViewRef}>
+          <div ref={scrollViewRef} className="scroll-view">
             {links.map((link, i) => (
-              <Content key={i}>
-                <Video
+              <div key={i} className="content">
+                <video
                   src={link}
                   muted={muted}
                   autoPlay
                   playsInline
                   ref={videoRefs.current[i]}
+                  className="video"
                   onClick={() => setMuted(false)}
                 />
-              </Content>
+              </div>
             ))}
-          </ScrollView>
+          </div>
         );
     };
 
