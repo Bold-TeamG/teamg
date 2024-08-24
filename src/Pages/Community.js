@@ -1,66 +1,74 @@
 import React, { useEffect, useRef, useState, createRef } from 'react';
 import Footer from '../Components/footer';
 import '../css/Community.css'; // CSSファイルをインポート
+import comment from '../image/comment.svg';
 
 export default function Community({ links }) {
+  const scrollViewRef = useRef(null);
+  const videoRefs = useRef(links.map(() => createRef()));
 
-    const scrollViewRef = useRef(null);
-    const videoRefs = useRef(links.map(() => createRef()));
+  useEffect(() => {
+    const scrollView = scrollViewRef.current;
+    if (!scrollView) return;
+    const observers = [];
 
-    useEffect(() => {
-        const scrollView = scrollViewRef.current;
-        if (!scrollView) return;
-        const observers = [];
-      
-        for (let i = 0; i < links.length; i++) {
-          const video = videoRefs.current[i].current;
-          if (!video) continue;
-      
-          const callback = (entries) => {
-            for (const entry of entries) {
-              if (entry.intersectionRatio === 1.0) {
-                videoRefs.current.forEach((ref) => {
-                  const video2 = ref.current;
-                  video2 === entry.target ? video2.play() : video2?.pause();
-                });
-              }
-            }
-          };
-          const options = { root: scrollView, threshold: 1 };
-          const observer = new IntersectionObserver(callback, options);
-          observer.observe(video);
-          observers.push(observer);
+    for (let i = 0; i < links.length; i++) {
+      const video = videoRefs.current[i].current;
+      if (!video) continue;
+
+      const callback = (entries) => {
+        for (const entry of entries) {
+          if (entry.intersectionRatio === 1.0) {
+            videoRefs.current.forEach((ref) => {
+              const video2 = ref.current;
+              video2 === entry.target ? video2.play() : video2?.pause();
+            });
+          }
         }
-      
-        return () => observers.forEach((observer) => observer.disconnect());
-    }, [links]);
+      };
+      const options = { root: scrollView, threshold: 1 };
+      const observer = new IntersectionObserver(callback, options);
+      observer.observe(video);
+      observers.push(observer);
+    }
 
-    const View = ({ links }) => {
-        const [muted, setMuted] = useState(true);
+    return () => observers.forEach((observer) => observer.disconnect());
+  }, [links]);
 
-        return (
-          <div ref={scrollViewRef} className="scroll-view">
-            {links.map((link, i) => (
-              <div key={i} className="content">
-                <video
-                  src={link}
-                  muted={muted}
-                  autoPlay
-                  playsInline
-                  ref={videoRefs.current[i]}
-                  className="video"
-                  onClick={() => setMuted(false)}
-                />
-              </div>
-            ))}
-          </div>
-        );
-    };
+  const View = ({ links }) => {
+    const [muted, setMuted] = useState(true);
 
     return (
-        <div className="App">
-            <View links={links} />
-            <Footer />
-        </div>
+      <div ref={scrollViewRef} className="scroll-view">
+        {links.map((link, i) => (
+          <div key={i} className="content">
+            <div className="video-container">
+              <video
+                src={link}
+                muted={muted}
+                autoPlay
+                playsInline
+                ref={videoRefs.current[i]}
+                className="video"
+                onClick={() => setMuted(false)}
+              />
+              <img
+                src={comment}
+                alt="Comment"
+                className="comment-icon"
+                onClick={() => alert('Comment icon clicked!')}
+              />
+            </div>
+          </div>
+        ))}
+      </div>
     );
+  };
+
+  return (
+    <div className="App">
+      <View links={links} />
+      <Footer />
+    </div>
+  );
 }
