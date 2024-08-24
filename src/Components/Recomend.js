@@ -94,21 +94,20 @@ export default function Recommend ({ links }) {
                     <p>コメントコメントコメント</p>
                 </div>
                 <div className='recoms'>
+                  <Link to="/product"><img src="https://placehold.jp/150x150.png"
+                        alt="Item"
+                        className="item-icon"
+                    /></Link>
+                    <Link to="/discover">
                     <img src="https://placehold.jp/150x150.png"
                         alt="Item"
                         className="item-icon"
-                        onClick={() => alert('Item icon clicked!')}
-                    />
+                    /></Link>
+                    <Link to="/genre">
                     <img src="https://placehold.jp/150x150.png"
                         alt="Item"
                         className="item-icon"
-                        onClick={() => alert('Item icon clicked!')}
-                    />
-                    <img src="https://placehold.jp/150x150.png"
-                        alt="Item"
-                        className="item-icon"
-                        onClick={() => alert('Item icon clicked!')}
-                    />
+                    /></Link>
                 </div>
             </div>
           </div>
