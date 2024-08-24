@@ -5,7 +5,11 @@
     background-color: #fff;
     max-width: 400px;
     margin: 0 auto;
-    padding: 20px;
+    height: calc(100vh - 60px);
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .community-post-container header {

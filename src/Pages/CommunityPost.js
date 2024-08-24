@@ -56,8 +56,6 @@ const CommunityPost = () => {
         <div className = "community-post-submitbutton">
             <button>List</button>
         </div>
-        
-        <Footer />
     </div>
     );
   };
