@@ -8,7 +8,7 @@ import share from '../image/share.svg';
 import person from '../image/person.svg';
 import { Link } from 'react-router-dom';
 
-export default function Recommend ({ links }) {
+export default function Following ({ links }) {
   const scrollViewRef = useRef(null);
   const videoRefs = useRef(links.map(() => createRef()));
 
@@ -90,7 +90,7 @@ export default function Recommend ({ links }) {
                     />
                 </div>
                 <div className='texts'>
-                    <h3>Recommend名</h3>
+                    <h3>Following名</h3>
                     <p>コメントコメントコメント</p>
                 </div>
                 <div className='recoms'>
