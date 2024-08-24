@@ -1,13 +1,24 @@
-import '../css/Searchbar.css'
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import '../css/Searchbar.css';
 
 export default function Searchbar() {
+    const navigate = useNavigate();
+
+    const handleBackClick = () => {
+        navigate(-1); 
+    };
+
     return (
-    <div class = "products-header">
-        <div class="search-bar">
-            <input type="text" placeholder="Search"/>
-        </div> 
-        <div class="bell-icon"><img src="bell.png" alt="bell"/></div>
-        <div class="cart-icon"><img src="cart.png" alt="cart"/></div>
-    </div>
-  );
+        <div className="products-header">
+            <div className="back-icon" onClick={handleBackClick}>
+                <img src="arrowback.png" alt="戻る"/>
+            </div>
+            <div className="search-bar">
+                <input type="text" placeholder="Search"/>
+            </div> 
+            <div className="bell-icon"><img src="bell.png" alt="bell"/></div>
+            <div className="cart-icon"><img src="cart.png" alt="cart"/></div>
+        </div>
+    );
 }
