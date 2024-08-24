@@ -1,28 +1,32 @@
 footer {
+    height: 48px;
     display: flex;
     align-items: center;
-    margin:0 auto;
-    padding: 10px 0;
+    justify-content: space-evenly;
+    margin:0 0;
     border-top: 1px solid #ccc;
     width: 100%;
-    max-width: 400px;
     background-color: #f5f5f5;
     position: absolute;
     bottom: 0;
-    width: 100%;
   }
   
   .component{
-    margin:0 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
-  .component h2 {
+  .component p {
     text-align: center;
     font-size: 10px;
     flex: 1;
     cursor: pointer;
+    display: inline-block;
+    margin: 0;
   }
   .component img{
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     object-fit: cover;
   }

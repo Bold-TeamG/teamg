@@ -2,6 +2,9 @@ import React, { useEffect, useRef, useState, createRef } from 'react';
 import Footer from '../Components/footer';
 import '../css/Community.css'; // CSSファイルをインポート
 import comment from '../image/comment.svg';
+import heart from '../image/heart.svg';
+import star from '../image/star.svg';
+import share from '../image/share.svg';
 
 export default function Community({ links }) {
   const scrollViewRef = useRef(null);
@@ -43,21 +46,45 @@ export default function Community({ links }) {
         {links.map((link, i) => (
           <div key={i} className="content">
             <div className="video-container">
-              <video
-                src={link}
-                muted={muted}
-                autoPlay
-                playsInline
-                ref={videoRefs.current[i]}
-                className="video"
-                onClick={() => setMuted(false)}
-              />
-              <img
-                src={comment}
-                alt="Comment"
-                className="comment-icon"
-                onClick={() => alert('Comment icon clicked!')}
-              />
+                <video
+                    src={link}
+                    muted={muted}
+                    autoPlay
+                    playsInline
+                    ref={videoRefs.current[i]}
+                    className="video"
+                    onClick={() => setMuted(false)}
+                />
+                <div className='icons'>
+                    <img
+                        src={heart}
+                        alt="heart"
+                        className="heart-icon icon"
+                        onClick={() => alert('Heart icon clicked!')}
+                    />
+                    <img
+                        src={comment}
+                        alt="Comment"
+                        className="comment-icon icon"
+                        onClick={() => alert('Comment icon clicked!')}
+                    />
+                    <img
+                        src={share}
+                        alt="share"
+                        className="share-icon icon"
+                        onClick={() => alert('Share icon clicked!')}
+                    />
+                    <img
+                        src={star}
+                        alt="Star"
+                        className="star-icon icon"
+                        onClick={() => alert('Star icon clicked!')}
+                    />
+                </div>
+                <div className='texts'>
+                    <h3>アカウント名</h3>
+                    <p>コメントコメントコメント</p>
+                </div>
             </div>
           </div>
         ))}
@@ -66,7 +93,7 @@ export default function Community({ links }) {
   };
 
   return (
-    <div className="App">
+    <div className="App com">
       <View links={links} />
       <Footer />
     </div>

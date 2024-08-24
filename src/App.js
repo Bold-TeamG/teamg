@@ -21,7 +21,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Search />} />
-      <Route path="/community" element={<Community　links={videoLinks} />} />
+      <Route path="/community" element={<Community links={videoLinks} />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/myprofile" element={<Myprofile />} />
       <Route path="/productpost" element={<ProductPost />} />

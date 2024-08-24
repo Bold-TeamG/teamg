@@ -8,25 +8,25 @@ export default function Footer() {
         <Link to="/community">
             <div className = "component">
                 <img src="home.png" alt="home" />
-                <h2>Community</h2>
+                <p>Community</p>
             </div>
         </Link>
         <Link to="/">
             <div className = "component">
                 <img src="search.png" alt="search" />
-                <h2>Discover</h2>
+                <p>Discover</p>
             </div>
         </Link>
         <Link to="/productpost">
             <div className = "component">
                 <img src="plus.png" alt="plus" />
-                <h2>Sell</h2>
+                <p>Sell</p>
             </div>
         </Link>
         <Link to="/myprofile">
             <div className = "component">
                 <img src="human.png" alt="user" />
-                <h2>Me</h2>
+                <p>Me</p>
             </div>
         </Link>
     </footer>
