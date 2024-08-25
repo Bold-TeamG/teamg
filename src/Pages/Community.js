@@ -45,9 +45,9 @@ export default function Community() {
   return (
     <div className="App com">
       <div {...handlers} style={{ touchAction: "pan-y" }}>
-        {activeTab === 0 && <div key="tab1"><Recommend links={videoLinks} /></div>}
-        {activeTab === 1 && <div key="tab2"><Art links={videoLinks} /></div>}
-        {activeTab === 2 && <div key="tab3"><Following links={videoLinks} /></div>}
+        {activeTab === 0 && <div key="tab1"><Recommend/></div>}
+        {activeTab === 1 && <div key="tab2"><Art/></div>}
+        {activeTab === 2 && <div key="tab3"><Following/></div>}
       </div>  
       <div className="tab-indicator">
         <span 
