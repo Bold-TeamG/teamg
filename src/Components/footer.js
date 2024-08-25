@@ -16,7 +16,7 @@ export default function Footer() {
           onClick={() => handleClick('community')}
           className={`component ${activeLink === 'community' ? 'active' : ''}`}
         >
-            <img src="home.png" alt="home" />
+            <img src="/home.png" alt="home" />
             <p>Community</p>
         </Link>
         <Link 
@@ -24,7 +24,7 @@ export default function Footer() {
           onClick={() => handleClick('discover')}
           className={`component ${activeLink === 'discover' ? 'active' : ''}`}
         >
-            <img src="search.png" alt="search" />
+            <img src="/search.png" alt="search" />
             <p>Discover</p>
         </Link>
         <Link 
@@ -32,7 +32,7 @@ export default function Footer() {
           onClick={() => handleClick('postswitcher')}
           className={`component ${activeLink === 'postswitcher' ? 'active' : ''}`}
         >
-            <img src="plus.png" alt="plus" />
+            <img src="/plus.png" alt="plus" />
             <p>Sell</p>
         </Link>
         <Link 
@@ -40,7 +40,7 @@ export default function Footer() {
           onClick={() => handleClick('myprofile')}
           className={`component ${activeLink === 'myprofile' ? 'active' : ''}`}
         >
-            <img src="human.png" alt="user" />
+            <img src="/human.png" alt="user" />
             <p>Me</p>
         </Link>
     </footer>

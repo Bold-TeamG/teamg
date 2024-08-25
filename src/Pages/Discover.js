@@ -5,9 +5,10 @@ import Searchbar from "../Components/Searchbar";
 import '../css/Discover.css';
 
 const Discover = () => {
+
   return (
     <div className = "discover-page">
-      <Searchbar />
+      <Searchbar/>
       <div className = "discover-container">
         <div class="recommended-user">
             <p>Recommend user</p>

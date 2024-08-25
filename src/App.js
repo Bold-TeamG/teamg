@@ -18,13 +18,13 @@ function App() {
     <Routes>
       <Route path="/" element={<Search />} />
       <Route path="/community" element={<Community />} />
-      <Route path="/profile" element={<Profile />} />
+      <Route path="/profile/:userId" element={<Profile />} />
       <Route path="/myprofile" element={<Myprofile />} />
       <Route path="/postswitcher" element={<PostSwitcher />} />
       <Route path="/discover" element={<Discover />} />
-      <Route path="/products" element={<Products />} />
-      <Route path="/product" element={<Product />} />
-      <Route path="/genre" element={<Genretop />} />
+      <Route path="/products/:keyword" element={<Products />} />
+      <Route path="/product/:productId" element={<Product />} />
+      <Route path="/genre/:genreId" element={<Genretop />} />
     </Routes>
   );
 }
