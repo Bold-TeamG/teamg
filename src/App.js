@@ -16,7 +16,7 @@ function App() {
  
   return (
     <Routes>
-      <Route path="/" element={<Search />} />
+      <Route path="/discover" element={<Discover />} />
       <Route path="/community" element={<Community />} />
       <Route path="/profile/:userId" element={<Profile />} />
       <Route path="/myprofile" element={<Myprofile />} />

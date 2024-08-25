@@ -8,7 +8,7 @@ import share from '../image/share.svg';
 import person from '../image/person.svg';
 import { Link } from 'react-router-dom';
 import { db, storage } from '../firebase/index';
-import { collection, getDocs, query, where } from 'firebase/firestore';
+import { collection, getDocs, query, where, doc, getDoc } from 'firebase/firestore';
 
 export default function Recommend() {
   const [posts, setPosts] = useState([]);
@@ -17,6 +17,8 @@ export default function Recommend() {
 
   useEffect(() => {
     const fetchPosts = async () => {
+      console.log('fetchPosts function is running'); // ここで fetchPosts 関数が実行されているか確認
+
       try {
         const postsCollection = collection(db, 'posts');
         const q = query(postsCollection, where('type_id', '==', 1)); // type_id == 1 の条件を追加
@@ -25,12 +27,38 @@ export default function Recommend() {
           id: doc.id,
           ...doc.data(),
         }));
-        setPosts(postsList);
+
+        console.log('Fetched posts:', postsList); // ここで取得した posts を確認
+
+        // 各 post について、product の thumbnail を取得
+        const postsWithThumbnails = await Promise.all(postsList.map(async post => {
+          console.log('Product ID:', post.product_id); // ここで product_id をログ出力
+          // product_id を文字列に変換
+          const productId = String(post.product_id);
+          const productRef = doc(db, 'products', productId);
+          console.log('Product Reference Path:', productRef.path); // ここで doc に渡されるパスをログ出力
+
+          const productSnap = await getDoc(productRef);
+
+          if (productSnap.exists()) {
+            console.log('Product found:', productSnap.data());
+            return {
+              ...post,
+              img_url: productSnap.data().img_url, // ここで product の thumbnail を追加
+            };
+          } else {
+            console.log('No product found for ID:', post.product_id);
+            return post; // product が見つからない場合はそのまま
+          }
+        }));
+
+        setPosts(postsWithThumbnails);
   
         // posts のデータが取得された後に videoRefs を設定する
-        videoRefs.current = postsList.map(() => createRef());
+        videoRefs.current = postsWithThumbnails.map(() => createRef());
       } catch (error) {
-        console.error("Error fetching posts: ", error);
+        console.error("Error fetching posts: ", error.message);
+        console.error(error.stack); // ここでスタックトレースを出力
       }
     };
 
@@ -119,10 +147,11 @@ export default function Recommend() {
                 <p>{post.comment || 'コメントコメントコメント'}</p>
               </div>
               <div className="recoms">
-                <Link to={`/product/${post.product_id}`}><img src={post.thunbnail_url}
-                  alt="Item"
-                  className="item-icon"
-                /></Link>
+                <Link to={`/product/${post.product_id}`}>
+                  <img src={post.img_url}
+                    alt="Item"
+                    className="item-icon"
+                  /></Link>
                 <Link to={`/products/${post.goods_name}`}>
                   <img src={post.goods_url}
                     alt="Item"
