@@ -75,15 +75,15 @@ const Myprofile = () => {
           </div>
           <div className="myprofile-stats">
             <div className="myprofile-components">
-              <h2>0</h2>
+              <h2>22</h2>
               <h4>Following</h4>
             </div>
             <div className="myprofile-components">
-              <h2>0</h2>
+              <h2>34</h2>
               <h4>Followers</h4>
             </div>
             <div className="myprofile-components">
-              <h2>0</h2>
+              <h2>50</h2>
               <h4>Likes</h4>
             </div>
           </div>
