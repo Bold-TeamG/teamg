@@ -7,16 +7,21 @@ import { collection, query, where, getDocs, doc, getDoc } from 'firebase/firesto
 import '../css/Profile.css';
 
 const UserComponent = ({ user }) => {
-  if (!user) {
-    return <div>Loading...</div>;
-  }
+  const placeholderImage = "https://placehold.jp/100x100.png";
+  const placeholderName = "Loading name...";
+  const placeholderComment = "Loading comment...";
 
-  const { icon_photo, name, comment, following, followers, likes } = user;
+  const icon_photo = user && user.icon_photo ? user.icon_photo : placeholderImage;
+  const name = user && user.name ? user.name : placeholderName;
+  const comment = user && user.comment ? user.comment : placeholderComment;
+  const following = user && user.following ? user.following : 0;
+  const followers = user && user.followers ? user.followers : 0;
+  const likes = user && user.likes ? user.likes : 0;
 
   return (
     <div className="profile-info">
       <div className="profile-picture">
-        <img src={icon_photo} alt="profile" />
+      <img src={user && user.icon_photo ? user.icon_photo : "https://placehold.jp/100x100.png"} alt="profile" />
       </div>
       <h2>{name || 'No name provided'}</h2>
       <p>{comment || 'No comment available'}</p>
