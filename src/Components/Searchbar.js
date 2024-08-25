@@ -16,7 +16,7 @@ export default function Searchbar({keyword}) {
         <div className="products-header">
             {shouldShowBackIcon && (
                 <div className="back-icon" onClick={handleBackClick}>
-                    <img src="arrowback.png" alt="戻る"/>
+                    <img src="/arrowback.png" alt="戻る"/>
                 </div>
             )}
 

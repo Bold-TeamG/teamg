@@ -1,16 +1,52 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState, createRef } from 'react';
 import Footer from '../Components/footer';
 import Gallery from '../Components/gallery'; 
 import '../css/Myprofile.css';
 
-const Myprofile = () => {
-  const [activeTab, setActiveTab] = useState("tab1");
+import { doc, getDoc } from 'firebase/firestore';
+import {db, storage} from '../firebase/index';
 
+const Myprofile = () => {
+    const [Data, setData] = useState(null);
+    useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const docRef = doc(db, "posts", "20");
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+            setData(docSnap.data());
+        } else {
+          console.warn("No document found with ID = 1");
+        }
+      } catch (error) {
+        console.error("Error fetching user data: ", error);
+      }
+    };
+
+    fetchUserData();
+  }, []);
+
+  const [activeTab, setActiveTab] = useState("tab1");
+  const tabLinks = {
+    tab1: ["product/1","product/2","product/3"],
+    tab2: ["detail/1","detail/2","detail/3"],
+    tab3: ["product/6","product/11","product/9"],
+    tab4: ["detail/6","detail/11","detail/9"],
+  }
   const tabImages = {
-    tab1: ["user.jpg", "user.jpg", "user.jpg"],
-    tab2: ["star_white.png", "star_white.png", "star_white.png"],
-    tab3: ["star_black.png", "star_black.png", "star_black.png"],
-    tab4: ["search.png", "search.png", "search.png"],
+    tab1: [Data ? Data.product1 : "https://placehold.jp/150x150.png",
+      Data ? Data.product2 : "https://placehold.jp/150x150.png",
+      Data ? Data.product3 : "https://placehold.jp/150x150.png"],
+    tab2: [Data ? Data.thunbnail1 : "https://placehold.jp/150x150.png",
+      Data ? Data.thunbnail2 : "https://placehold.jp/150x150.png",
+      Data ? Data.thunbnail3 : "https://placehold.jp/150x150.png"],
+    tab3: [Data ? Data.goodproduct1 : "https://placehold.jp/150x150.png",
+      Data ? Data.goodproduct2 : "https://placehold.jp/150x150.png",
+      Data ? Data.goodproduct3 : "https://placehold.jp/150x150.png"],
+    tab4: [Data ? Data.goodthunbnail1 : "https://placehold.jp/150x150.png",
+      Data ? Data.goodthunbnail2 : "https://placehold.jp/150x150.png",
+      Data ? Data.goodthunbnail3 : "https://placehold.jp/150x150.png"]
   };
   const tabIcons = {
     tab1: "items.png",
@@ -69,7 +105,7 @@ const Myprofile = () => {
         </div>
         
         <div className="myprofile-content">
-          <Gallery images={tabImages[activeTab]} className={galleryClass}/>
+          <Gallery images={tabImages[activeTab]} className={galleryClass} links = {tabLinks[activeTab]}/>
         </div>
     
       </div>

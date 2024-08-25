@@ -1,63 +1,37 @@
-
-import React, { useEffect, useState } from 'react'
-import '../css/Profile.css';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import Footer from '../Components/footer';
-import Gallery from '../Components/gallery'; 
-import {db, storage} from '../firebase/index'
-import { collection, query, where, getDocs } from 'firebase/firestore';
-import { getFirestore, doc, getDoc } from 'firebase/firestore';
-import { useParams } from 'react-router-dom';
+import Gallery from '../Components/gallery';
+import { db } from '../firebase/index';
+import { collection, query, where, getDocs, doc, getDoc } from 'firebase/firestore';
+import '../css/Profile.css';
 
+const UserComponent = ({ user }) => {
+  if (!user) {
+    return <div>Loading...</div>;
+  }
 
-const UserComponent = () => {
-  const {userId} = useParams();
-  const user_id = userId.toString();
-  const [userData, setUserData] = useState(null);
-  useEffect(() => {
-    const fetchUserData = async () => {
-      try {
-        const docRef = doc(db, "users", user_id);
-        const docSnap = await getDoc(docRef);
-
-        if (docSnap.exists()) {
-          const data = docSnap.data();
-          // icon_photo にエンティティが含まれている場合はデコードする
-          const decodedIconPhoto = data.icon_photo.replace(/&quot;/g, '');
-          setUserData({
-            ...data,
-            icon_photo: decodedIconPhoto,
-          });
-        } else {
-          console.warn("No document found with ID = 1");
-        }
-      } catch (error) {
-        console.error("Error fetching user data: ", error);
-      }
-    };
-
-    fetchUserData();
-  }, []);
+  const { icon_photo, name, comment, following, followers, likes } = user;
 
   return (
     <div className="profile-info">
       <div className="profile-picture">
-        <img src={userData ? userData.icon_photo : 'https://placehold.jp/100x100.png'} alt="profile" />
+        <img src={icon_photo} alt="profile" />
       </div>
-      <h2>{userData ? userData.name : 'loading'}</h2>
-      <p>{userData ? userData.comment : 'loading'}</p>
+      <h2>{name || 'No name provided'}</h2>
+      <p>{comment || 'No comment available'}</p>
 
       <div className="profile-stats">
         <div className="profile-components">
-          <h2>14</h2>
+          <h2>{following || 0}</h2>
           <h4>Following</h4>
         </div>
         <div className="profile-components">
-          <h2>38</h2>
+          <h2>{followers || 0}</h2>
           <h4>Followers</h4>
         </div>
         <div className="profile-components">
-          <h2>91</h2>
+          <h2>{likes || 0}</h2>
           <h4>Likes</h4>
         </div>
       </div>
@@ -70,53 +44,100 @@ const UserComponent = () => {
   );
 };
 
-
-
-export default function Profile () {
+export default function Profile() {
   const navigate = useNavigate();
+  const { userId } = useParams();
+  const [activeTab, setActiveTab] = useState("tab1");
+  const [data, setData] = useState({
+    user: null,
+    posts: [],
+    products: []
+  });
 
-    const handleBackClick = () => {
-        navigate(-1); 
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        // Fetch user data
+        const userRef = doc(db, "users", userId);
+        const userSnap = await getDoc(userRef);
+        let userData = null;
+
+        if (userSnap.exists()) {
+          userData = userSnap.data();
+          const decodedIconPhoto = userData.icon_photo?.replace(/&quot;/g, '') || 'https://placehold.jp/100x100.png';
+          userData = {
+            ...userData,
+            icon_photo: decodedIconPhoto
+          };
+        } else {
+          console.warn(`No document found with ID = ${userId}`);
+        }
+
+        // Fetch posts data
+        const postsQuery = query(collection(db, "posts"), where("user_id", "==", userId));
+        const postsSnap = await getDocs(postsQuery);
+        const postsData = postsSnap.docs.map(doc => doc.data());
+
+        // Fetch products data
+        const productsQuery = query(collection(db, "products"), where("user_id", "==", userId));
+        const productsSnap = await getDocs(productsQuery);
+        const productsData = productsSnap.docs.map(doc => doc.data());
+
+        // Set data to state
+        setData({
+          user: userData,
+          posts: postsData,
+          products: productsData
+        });
+      } catch (error) {
+        console.error("Error fetching data: ", error);
+      }
     };
 
-  const [activeTab, setActiveTab] = useState("tab1");
+    fetchUserData();
+  }, [userId]);
 
-  const tabImages = {
-    tab1: ["/user.jpg", "/user.jpg", "/user.jpg"],
-    tab2: ["/star_white.png", "/star_white.png", "/star_white.png"],
+  const handleBackClick = () => {
+    navigate(-1); 
   };
-  const tabIcons = {
-    tab1: "/items.png",
-    tab2: "/community_contents.png",
-  };
+
   const galleryClass = `gallery ${activeTab === "tab1" ? "gallery-tab1" : activeTab === "tab2" ? "gallery-tab2" : ""}`;
+  const images = activeTab === "tab1" ? data.products.map(product => product.img_url) : data.posts.map(post => post.thumbnail_url);
+  const links = activeTab === "tab1" ? data.products.map(product => `/product/${product.id}`) : data.posts.map(post => `/detail/${post.id}`);
+
   return (
     <div className="profile-page">
       <div className="account-header">
-            <div className="back-icon" onClick={handleBackClick}>
-                <img src="/arrowback.png" alt="戻る"/>
-            </div>
+        <div className="back-icon" onClick={handleBackClick}>
+          <img src="/arrowback.png" alt="Back" />
         </div>
+      </div>
       <div className="profile-container">
-        <UserComponent />
+        <UserComponent user={data.user} />
         <div className="profile-icon">
-          {Object.keys(tabIcons).map(tab => (
-            <button
-              key={tab}
-              className={`tab ${activeTab === tab ? "active" : ""}`}
-              onClick={() => setActiveTab(tab)}
-            >
-              <img src={tabIcons[tab]} alt={tab} />
-            </button>
-          ))}
+          <button
+            className={`tab ${activeTab === "tab1" ? "active" : ""}`}
+            onClick={() => setActiveTab("tab1")}
+          >
+            <img src="/items.png" alt="Posts" />
+          </button>
+          <button
+            className={`tab ${activeTab === "tab2" ? "active" : ""}`}
+            onClick={() => setActiveTab("tab2")}
+          >
+            <img src="/community_contents.png" alt="Products" />
+          </button>
         </div>
-        
+
         <div className="profile-content">
-          <Gallery images={tabImages[activeTab]} className={galleryClass}/>
+          <Gallery
+            images={images}
+            className={galleryClass}
+            links={links}
+          />
         </div>
-    
-    </div>
-    <Footer />
+      </div>
+      <Footer />
     </div>
   );
-};
+}
