@@ -11,11 +11,18 @@ footer {
     position: fixed; 
   }
   
-  .component{
+  .component {
+    width:25%;
+    margin:5px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    cursor: pointer; 
+  }
+
+  .component.active {
+    border-bottom: 5px solid #989898; 
   }
   .component p {
     text-align: center;

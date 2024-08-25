@@ -94,6 +94,9 @@
     outline:none;
     border: none;
   }
+  .profile-icon button.active {
+    border-bottom: 3px solid #ccc; 
+  }
   .profile-icon img{
       width: 30px;
       height: 30px;
@@ -114,13 +117,11 @@
   }
   .gallery-tab1 img , .gallery-tab3 img{
     width: 33%;
-    height: 100px;
     object-fit: cover;
   }
   
   .gallery-tab2 img ,.gallery-tab4 img{
     width: 33%;
-    height: 200px;
     object-fit: cover;
   }
  
