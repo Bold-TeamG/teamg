@@ -98,7 +98,7 @@ export default function Recommend ({ links }) {
                         alt="Item"
                         className="item-icon"
                     /></Link>
-                    <Link to="/discover">
+                    <Link to="/products">
                     <img src="https://placehold.jp/150x150.png"
                         alt="Item"
                         className="item-icon"

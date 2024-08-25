@@ -1,29 +1,29 @@
-
 .post-switcher-buttons.hide {
-    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
-.post-switcher-buttons{
+
+.post-switcher-buttons {
     position: absolute;
-    top: 550px; 
+    top: 450px;
     left: 50%;
-    transform: translateX(-50%); 
+    transform: translateX(-50%);
     display: flex;
     justify-content: center;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s;
-    border-radius: 30px; 
+    transition: background-color 0.3s, opacity 0.3s ease;
+    border-radius: 30px;
     background-color: #b7b7b7;
 }
 
 .post-switcher-button {
     width: 100%;
-    color:#fff;
+    color: #fff;
     background-color: #b7b7b7;
     border: none;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-    margin: 0 10px; 
-    border-radius: 30px; 
+    margin: 0 10px;
+    border-radius: 30px;
 }
-
