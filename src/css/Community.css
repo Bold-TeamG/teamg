@@ -54,6 +54,13 @@
     margin: 10px;
 }
 
+.person-icon {
+    border-radius: 50%;
+    margin: 0;
+    width: 40px;
+    height: 40px;
+}
+
 .texts {
     position: absolute;
     bottom: 20px; 
@@ -84,6 +91,7 @@
     height: 50px;
     margin: 10px;
     border-radius: 10px;
+    box-shadow: 2px 2px 2px #000;
 }
 
 .tab-indicator {
@@ -93,7 +101,14 @@
     display: flex;
     justify-content: center;
     margin: 20px 0;
+    overflow: hidden;
   }
+  .tab-indicator-wrapper {
+    display: flex;
+    justify-content: center;
+    transform: translateX(0); /* JavaScriptで動かすために初期値を設定 */
+    transition: transform 0.3s ease; /* 中央に移動するアニメーションを追加 */
+}
   
   .tab {
     padding: 10px 15px;
@@ -110,6 +125,7 @@
   
 .detail-content {
     height: calc(100vh - 48px);
+    background-color: #000;
 }
 
 .detail-content .products-header {

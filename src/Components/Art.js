@@ -30,32 +30,51 @@ export default function Recommend() {
 
         console.log('Fetched posts:', postsList); // ここで取得した posts を確認
 
-        // 各 post について、product の thumbnail を取得
-        const postsWithThumbnails = await Promise.all(postsList.map(async post => {
-          console.log('Product ID:', post.product_id); // ここで product_id をログ出力
-          // product_id を文字列に変換
+        const postsWithThumbnailsAndIcons = await Promise.all(postsList.map(async post => {
+          console.log('Product ID:', post.product_id);
           const productId = String(post.product_id);
           const productRef = doc(db, 'products', productId);
-          console.log('Product Reference Path:', productRef.path); // ここで doc に渡されるパスをログ出力
-
+          console.log('Product Reference Path:', productRef.path);
+        
           const productSnap = await getDoc(productRef);
-
+        
+          let updatedPost = { ...post };
+        
           if (productSnap.exists()) {
             console.log('Product found:', productSnap.data());
-            return {
-              ...post,
-              img_url: productSnap.data().img_url, // ここで product の thumbnail を追加
+            updatedPost = {
+              ...updatedPost,
+              img_url: productSnap.data().img_url, // product の thumbnail を追加
             };
           } else {
             console.log('No product found for ID:', post.product_id);
-            return post; // product が見つからない場合はそのまま
           }
+        
+          // user_id から users コレクションの icon_photo を取得
+          console.log('User ID:', post.user_id);
+          const userId = String(post.user_id);
+          const userRef = doc(db, 'users', userId);
+          console.log('User Reference Path:', userRef.path);
+        
+          const userSnap = await getDoc(userRef);
+        
+          if (userSnap.exists()) {
+            console.log('User found:', userSnap.data());
+            updatedPost = {
+              ...updatedPost,
+              icon_photo: userSnap.data().icon_photo, // user の icon_photo を追加
+            };
+          } else {
+            console.log('No user found for ID:', post.user_id);
+          }
+        
+          return updatedPost;
         }));
-
-        setPosts(postsWithThumbnails);
+        
+        setPosts(postsWithThumbnailsAndIcons);        
   
         // posts のデータが取得された後に videoRefs を設定する
-        videoRefs.current = postsWithThumbnails.map(() => createRef());
+        videoRefs.current = postsWithThumbnailsAndIcons.map(() => createRef());
       } catch (error) {
         console.error("Error fetching posts: ", error.message);
         console.error(error.stack); // ここでスタックトレースを出力
@@ -113,7 +132,7 @@ export default function Recommend() {
               <div className="icons">
               <Link to={`/profile/${post.user_id}`}>
                   <img
-                    src={person}
+                    src={post.icon_photo}
                     alt="person icon"
                     className="person-icon icon"
                   /></Link>
