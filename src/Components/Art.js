@@ -169,17 +169,17 @@ export default function Recommend() {
                 <Link to={`/product/${post.product_id}`}>
                   <img src={post.img_url}
                     alt="Item"
-                    className="item-icon"
+                    className="item-icon side-item"
                   /></Link>
                 <Link to={`/products/${post.goods_name}`}>
                   <img src={post.goods_url}
                     alt="Item"
-                    className="item-icon"
+                    className="item-icon side-item"
                   /></Link>
                 <Link to={`/genre/${post.genre_id}`}>
                   <img src={post.genre_url}
                     alt="Item"
-                    className="item-icon"
+                    className="item-icon side-item"
                   /></Link>
               </div>
             </div>
