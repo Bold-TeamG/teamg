@@ -47,6 +47,7 @@ const UserComponent = ({ user }) => {
 export default function Profile() {
   const navigate = useNavigate();
   const { userId } = useParams();
+  const UserId = parseInt(userId);
   const [activeTab, setActiveTab] = useState("tab1");
   const [data, setData] = useState({
     user: null,
@@ -61,7 +62,7 @@ export default function Profile() {
         const userRef = doc(db, "users", userId);
         const userSnap = await getDoc(userRef);
         let userData = null;
-
+  
         if (userSnap.exists()) {
           userData = userSnap.data();
           const decodedIconPhoto = userData.icon_photo?.replace(/&quot;/g, '') || 'https://placehold.jp/100x100.png';
@@ -72,37 +73,44 @@ export default function Profile() {
         } else {
           console.warn(`No document found with ID = ${userId}`);
         }
-
+  
         // Fetch posts data
-        const postsQuery = query(collection(db, "posts"), where("user_id", "==", userId));
+        const postsQuery = query(collection(db, "posts"), where("user_id", "==", UserId));
         const postsSnap = await getDocs(postsQuery);
-        const postsData = postsSnap.docs.map(doc => doc.data());
-
+        const postsData = postsSnap.docs.map(doc => ({
+          ...doc.data(),
+          id: doc.id // ドキュメントIDを追加
+        }));
+  
         // Fetch products data
-        const productsQuery = query(collection(db, "products"), where("user_id", "==", userId));
+        const productsQuery = query(collection(db, "products"), where("user_id", "==", UserId));
         const productsSnap = await getDocs(productsQuery);
-        const productsData = productsSnap.docs.map(doc => doc.data());
-
+        const productsData = productsSnap.docs.map(doc => ({
+          ...doc.data(),
+          id: doc.id // ドキュメントIDを追加
+        }));
+  
         // Set data to state
         setData({
           user: userData,
           posts: postsData,
           products: productsData
         });
+  
       } catch (error) {
         console.error("Error fetching data: ", error);
       }
     };
-
+  
     fetchUserData();
   }, [userId]);
-
+  
   const handleBackClick = () => {
     navigate(-1); 
   };
 
   const galleryClass = `gallery ${activeTab === "tab1" ? "gallery-tab1" : activeTab === "tab2" ? "gallery-tab2" : ""}`;
-  const images = activeTab === "tab1" ? data.products.map(product => product.img_url) : data.posts.map(post => post.thumbnail_url);
+  const images = activeTab === "tab1" ? data.products.map(product => product.img_url) : data.posts.map(post => post.thunbnail_url);
   const links = activeTab === "tab1" ? data.products.map(product => `/product/${product.id}`) : data.posts.map(post => `/detail/${post.id}`);
 
   return (
