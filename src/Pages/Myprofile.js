@@ -49,11 +49,38 @@ const Myprofile = () => {
       Data ? Data.goodthunbnail3 : "https://placehold.jp/150x150.png"]
   };
   const tabIcons = {
-    tab1: "items.png",
-    tab2: "community_contents.png",
-    tab3: "heart_items.png",
-    tab4: "heart_community.png",
+    tab1: (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="24" height="24">
+        <g stroke={activeTab === "tab1" ? "#000" : "#888"} strokeWidth="4" fill="none">
+          <polygon points="4,20 32,2 60,20 32,38" />
+          <polygon points="4,20 4,44 32,62 60,44 60,20 32,38" />
+          <polyline points="4,20 32,38 60,20" />
+          <line x1="32" y1="38" x2="32" y2="62" />
+        </g>
+      </svg>
+    ),
+    tab2: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke={activeTab === "tab2" ? "#000" : "#888"}
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path
+          d="M22.54 6.42a2.78 2.78 0 00-1.95-1.95C18.88 4 12 4 12 4s-6.88 0-8.59.47A2.78 2.78 0 001.46 6.42 29.94 29.94 0 001 12a29.94 29.94 0 00.46 5.58 2.78 2.78 0 001.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 001.95-1.95A29.94 29.94 0 0023 12a29.94 29.94 0 00-.46-5.58z"
+        ></path>
+        <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon>
+      </svg>
+    ),
+    tab3: <img src="heart_items.png" alt="heart_items" />,
+    tab4: <img src="heart_community.png" alt="heart_community" />
   };
+  
 
   const galleryClass = `gallery ${activeTab === "tab1" ? "gallery-tab1" : activeTab === "tab2" ? "gallery-tab2"  : activeTab === "tab3" ? "gallery-tab3" : activeTab === "tab4" ? "gallery-tab4" : ""}`;
   
@@ -99,7 +126,7 @@ const Myprofile = () => {
               className={`tab ${activeTab === tab ? "active" : ""}`}
               onClick={() => setActiveTab(tab)}
             >
-              <img src={tabIcons[tab]} alt={tab} />
+              {tabIcons[tab]}
             </button>
           ))}
         </div>

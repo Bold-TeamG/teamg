@@ -13,7 +13,6 @@
 .scroll-view::-webkit-scrollbar {
     width: 0px;
 }
-
 .video-container {
     position: relative;
     display: flex;
@@ -22,7 +21,6 @@
     width: 100%;
     height: 100%;
 }
-
 .content {
     width: 100vw;
     height: 100%;
@@ -32,7 +30,6 @@
 }
 
 .video {
-    max-width: 100%;
     max-height: 100%;
     width: auto;
     height: auto;
@@ -112,8 +109,7 @@
     transform: translateX(0); /* JavaScriptで動かすために初期値を設定 */
     transition: transform 0.3s ease; /* 中央に移動するアニメーションを追加 */
 }
-  
-  .tab {
+.tab {
     padding: 10px 15px;
     margin: 0 10px;
     font-size: 16px;
@@ -133,4 +129,27 @@
 
 .detail-content .products-header {
     z-index: 100;
+}
+
+footer {
+    background-color: #000;
+    border: none;
+}
+
+.black-component {
+    text-decoration: none;
+    color: #fff;
+}
+
+.black-stroke {
+    stroke: #fff;
+}
+
+.black-fill {
+    fill: #fff;
+    width: 24px;
+    height: 24px;
+}
+.black-footer p {
+    color: #fff;
 }

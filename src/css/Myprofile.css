@@ -83,9 +83,6 @@
     outline:none;
     border: none;
   }
-  .myprofile-icon button.active {
-    border-bottom: 3px solid #ccc; 
-  }
   .myprofile-actions button:hover {
     background-color: #ddd;
   }

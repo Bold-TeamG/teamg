@@ -4,6 +4,7 @@ import Recommend from '../Components/Recomend';
 import Art from "../Components/Art";
 import Following from "../Components/Following";
 import Footer from '../Components/footer';
+import FooterBlack from '../Components/footer-black';
 import '../css/Community.css';
 
 export default function Community() {
@@ -69,7 +70,7 @@ export default function Community() {
           </span>
         </div>
       </div>
-      <Footer />
+      <FooterBlack />
     </div>
   );
 }

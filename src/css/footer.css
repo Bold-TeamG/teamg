@@ -10,7 +10,10 @@ footer {
     bottom: 0;
     position: fixed; 
   }
-  
+
+  .foot {
+    background-color: #fff;
+  }
   .component {
     width:25%;
     margin:5px;
@@ -19,9 +22,8 @@ footer {
     justify-content: center;
     align-items: center;
     cursor: pointer; 
+    justify-content: flex-end;
   }
-
-
   .component p {
     text-align: center;
     font-size: 10px;
@@ -30,8 +32,19 @@ footer {
     display: inline-block;
     margin: 0;
   }
+
+  .component {
+    text-decoration: none;
+    color: #000;
+  }
+
   .component img{
     width: 32px;
     height: 32px;
     object-fit: cover;
+  }
+
+  .commu {
+    width: 24px;
+    height: 24px;
   }

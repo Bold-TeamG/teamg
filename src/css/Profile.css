@@ -1,8 +1,13 @@
 .account-header{
-  padding: 10px 5px;
+  padding: 10px 5%;
   display: flex;
-  top: 0;
+  top: 0;  
 }
+
+.account-header {
+  height : 38.5px;
+}
+
 
 .profile-container {
     font-family: Arial, sans-serif;
@@ -11,7 +16,6 @@
     align-items: center;
     width: 100%;
     background-color: white;
-    border: 1px solid #ccc;
     border-radius: 10px;
     height: calc(100vh - 48px);
     overflow-y: scroll;
@@ -25,7 +29,6 @@
     align-items: center;
     width: 100%;
     padding-bottom: 30px;
-    border-bottom: 1px solid #ccc;
   }
   .profile-info h2 {
     margin: 0;                  
@@ -70,7 +73,7 @@
     margin: 0 10px;
     padding: 10px 20px;
     border: 1px solid #ccc;
-    background-color: #f5f5f5;
+    background-color: #fff;
     border-radius: 5px;
     cursor: pointer;
   }
@@ -81,7 +84,7 @@
   .profile-icon{
     display:flex;
     width: 100%;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #ecedf1;
   }
 
   .profile-icon {
@@ -93,10 +96,9 @@
     width: 50%;
     outline:none;
     border: none;
+    text-decoration: none;
   }
-  .profile-icon button.active {
-    border-bottom: 3px solid #ccc; 
-  }
+ 
   .profile-icon img{
       width: 30px;
       height: 30px;
@@ -124,5 +126,6 @@
     width: 33%;
     object-fit: cover;
   }
+
  
   

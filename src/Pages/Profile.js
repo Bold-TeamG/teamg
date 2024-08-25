@@ -121,9 +121,23 @@ export default function Profile() {
   return (
     <div className="profile-page">
       <div className="account-header">
-        <div className="back-icon" onClick={handleBackClick}>
-          <img src="/arrowback.png" alt="Back" />
-        </div>
+      <div className="back-icon" onClick={handleBackClick}>
+                <svg 
+                  width="24" 
+                  height="24" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path 
+                    d="M15 19L8 12L15 5" 
+                    stroke="#000" 
+                    stroke-width="2" 
+                    stroke-linecap="round" 
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
       </div>
       <div className="profile-container">
         <UserComponent user={data.user} />
@@ -132,13 +146,39 @@ export default function Profile() {
             className={`tab ${activeTab === "tab1" ? "active" : ""}`}
             onClick={() => setActiveTab("tab1")}
           >
-            <img src="/items.png" alt="Posts" />
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="24" height="24">
+            <g stroke={activeTab === "tab1" ? "#000" : "#888"} stroke-width="4" fill="none">
+            <polygon points="4,20 32,2 60,20 32,38" />
+            <polygon points="4,20 4,44 32,62 60,44 60,20 32,38" />
+            <polyline points="4,20 32,38 60,20" />
+            <line x1="32" y1="38" x2="32" y2="62" />
+            </g>
+            </svg>
+
+
+
           </button>
           <button
             className={`tab ${activeTab === "tab2" ? "active" : ""}`}
             onClick={() => setActiveTab("tab2")}
           >
-            <img src="/community_contents.png" alt="Products" />
+            <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke={activeTab === "tab2" ? "#000" : "#888"}
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            >
+            <path
+            d="M22.54 6.42a2.78 2.78 0 00-1.95-1.95C18.88 4 12 4 12 4s-6.88 0-8.59.47A2.78 2.78 0 001.46 6.42 29.94 29.94 0 001 12a29.94 29.94 0 00.46 5.58 2.78 2.78 0 001.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 001.95-1.95A29.94 29.94 0 0023 12a29.94 29.94 0 00-.46-5.58z"
+            ></path>
+            <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon>
+            </svg>
+
           </button>
         </div>
 
