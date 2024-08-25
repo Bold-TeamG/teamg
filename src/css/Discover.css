@@ -50,8 +50,10 @@
     margin-bottom: 15px;
 }
 .user-photo {
-    width: 60px;
-    height: 60px;
+    border-radius: 100%;
+    margin-right:10px;
+    width: 80px;
+    height: 80px;
 }
 .arrow-photo {
     width: 40px;

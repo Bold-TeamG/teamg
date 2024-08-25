@@ -66,24 +66,24 @@ const Myprofile = () => {
       <div className="myprofile-container">
         <div className="myprofile-info">
           <div className="myprofile-picture">
-            <img src="user.jpg" alt="profile" />
+            <img src="userphoto.jpg" alt="profile" />
           </div>
-          <h2>Jacob West</h2>
+          <h2>Emily</h2>
           <div className="myprofile-reputation">
             {[...Array(4)].map((_, i) => <img key={i} src="star_black.png" alt="star_black" />)}
             <img src="star_white.png" alt="star_white" />
           </div>
           <div className="myprofile-stats">
             <div className="myprofile-components">
-              <h2>14</h2>
+              <h2>0</h2>
               <h4>Following</h4>
             </div>
             <div className="myprofile-components">
-              <h2>38</h2>
+              <h2>0</h2>
               <h4>Followers</h4>
             </div>
             <div className="myprofile-components">
-              <h2>91</h2>
+              <h2>0</h2>
               <h4>Likes</h4>
             </div>
           </div>

@@ -21,9 +21,7 @@ footer {
     cursor: pointer; 
   }
 
-  .component.active {
-    border-bottom: 5px solid #989898; 
-  }
+
   .component p {
     text-align: center;
     font-size: 10px;

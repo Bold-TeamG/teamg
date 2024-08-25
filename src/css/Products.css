@@ -2,7 +2,7 @@
     margin-top: 80px;
     font-family: Arial, sans-serif;
     background-color: #fff;
-    height: calc(100vh - 60px);
+    height: calc(100vh - 108px);
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
     -ms-overflow-style: none;
