@@ -11,6 +11,7 @@ import Products from './Pages/Products';
 import Product from './Pages/Product';
 import { Route, Routes} from 'react-router-dom';
 import Genretop from './Pages/Genretop';
+import Detail from './Pages/Detail';
 
 function App() {
  
@@ -25,6 +26,7 @@ function App() {
       <Route path="/products/:keyword" element={<Products />} />
       <Route path="/product/:productId" element={<Product />} />
       <Route path="/genre/:genreId" element={<Genretop />} />
+      <Route path="/detail/:postId" element={<Detail />} />
     </Routes>
   );
 }
