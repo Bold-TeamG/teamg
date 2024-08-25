@@ -17,7 +17,7 @@ function App() {
  
   return (
     <Routes>
-      <Route path="/discover" element={<Discover />} />
+      <Route path="/" element={<Discover />} />
       <Route path="/community" element={<Community />} />
       <Route path="/profile/:userId" element={<Profile />} />
       <Route path="/myprofile" element={<Myprofile />} />
