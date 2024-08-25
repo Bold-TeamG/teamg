@@ -56,7 +56,7 @@ const Discover = () => {
 
           <Link to="/profile/4">
             <div className="user-section">
-              <img className="user-photo" src="user.jpg" alt="user" />
+              <img className="user-photo" src={data.user.icon_photo} alt="user" />
               <span>{data.user.name}</span>
               <img className="arrow-photo" src="arrow.png" alt="arrow" />
             </div>
@@ -64,7 +64,7 @@ const Discover = () => {
 
           <div className="product-grid">
             {data.posts.map((post, index) => (
-              <img key={index} src={post.thunbnail_url} alt={`Product ${index + 1}`} />
+              <a href = {`detail/${post.product_id}`}><img key={index} src={post.thunbnail_url} alt={`Product ${index + 1}`} /></a>
             ))}
           </div>
         </div>
@@ -72,7 +72,7 @@ const Discover = () => {
           <p>Recommend products</p>
           <div className="product-grid">
             {data.products.map((product, index) => (
-              <img key={index} src={product.img_url} alt={`Product ${index + 1}`} />
+              <a href = {`product/${product.id}`} ><img key={index}  src={product.img_url} alt={`Product ${index + 1}`} /></a>
             ))}
           </div>
         </div>
