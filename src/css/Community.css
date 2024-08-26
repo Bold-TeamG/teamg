@@ -138,18 +138,27 @@ footer {
 
 .black-component {
     text-decoration: none;
-    color: #fff;
+    color: #cdced2;
 }
 
+
 .black-stroke {
-    stroke: #fff;
+    stroke: #cdced2;
 }
 
 .black-fill {
-    fill: #fff;
+    fill: #cdced2;
     width: 24px;
     height: 24px;
 }
 .black-footer p {
+    color: #cdced2;
+}
+
+.community-white {
     color: #fff;
+}
+
+.community-white svg{
+    fill: #fff;
 }

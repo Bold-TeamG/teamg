@@ -35,7 +35,7 @@ footer {
 
   .component {
     text-decoration: none;
-    color: #000;
+    color: #cdced2;
   }
 
   .component img{
@@ -48,3 +48,30 @@ footer {
     width: 24px;
     height: 24px;
   }
+
+  .white-stroke {
+    stroke: #cdced2;
+  }
+
+  .white-fill {
+    fill: #cdced2;
+  }
+
+  /* Active class styles */
+.component.active {
+  color: #000; /* テキストの色を変更 */
+}
+
+.component.active .white-stroke {
+  stroke: #000; /* SVGのストローク色を変更 */
+}
+
+.component.active .white-fill {
+  fill: #000; /* SVGの塗りつぶし色を変更 */
+}
+
+.component.active p {
+  color: #000; /* テキストの色を変更 */
+}
+
+  
