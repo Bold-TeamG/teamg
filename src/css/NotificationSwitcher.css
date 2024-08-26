@@ -1,0 +1,28 @@
+.notification-switcher-container {
+    font-family: Arial, sans-serif;
+    width: 100%;
+    background-color: white;
+    height: calc(100vh - 48px);
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .notification-switcher-header {
+    background-color: rgb(0, 0, 0);
+    padding:10px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.notification-switcher-header button {
+  background-color: rgb(0, 0, 0);
+    color:white;
+    width: 100%;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 10px;
+}
+

@@ -19,16 +19,13 @@
 }
 
 .search-bar input {
-    width: 150%;
+    width: 100%;
     padding: 10px;
     border-radius: 30px;
     border: 1px solid #ecedf1;
     background-color: #f5f5f6;
 }
-.bell-icon{
-    margin-left: 100px;
-    margin-right:10px;
-}
+
 .back-icon img,.bell-icon img, .cart-icon img{
     width: 30px;
     height: 30px;

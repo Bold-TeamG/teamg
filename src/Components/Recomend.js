@@ -8,9 +8,17 @@ import share from '../image/share.svg';
 import person from '../image/person.svg';
 import { Link } from 'react-router-dom';
 import { db, storage } from '../firebase/index';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { collection, getDocs, query, where, doc, getDoc } from 'firebase/firestore';
+import { useModal } from 'react-hooks-use-modal';
 
 export default function Recommend() {
+  const [Modal, open, close, isOpen] = useModal('root', {
+    preventScroll: true,
+    focusTrapOptions : { 
+       clickOutsideDeactivates : false
+    },  
+  });
   const [posts, setPosts] = useState([]);
   const videoRefs = useRef([]);
   const scrollViewRef = useRef(null);  // scrollViewRef を useRef で定義
@@ -114,11 +122,40 @@ export default function Recommend() {
 
   const View = ({ posts }) => {
     const [muted, setMuted] = useState(true);
+    const navigate = useNavigate();
+    const location = useLocation();
 
+    const handleBackClick = () => {
+        navigate(-1); 
+    };
     return (
       <div ref={scrollViewRef} className="scroll-view"> {/* scrollViewRef を div に割り当て */}
         {posts.map((post, i) => (
           <div key={post.id} className="content">
+            <Modal>
+               <div className = "joboffer-container ">
+            
+                  <section className="joboffer-description">
+                      <div className = "joboffer-title">
+                          <label>JOB OFFER</label>
+                      </div>
+                      <div className="joboffer-input">
+                           <input type="text" placeholder="Name"></input>
+                          <input type="text" placeholder="Phonenumber"></input>
+                          <input type="text"   placeholder="Job content"></input>
+                          <input type="text"  placeholder="Place"></input>
+                          <input type="text" placeholder="Time"></input>
+                          <input type="text" placeholder="Pay"></input>
+                          <input type="text" placeholder="Description"></input>
+                      </div>
+
+                  </section>
+                  <div className = "joboffer-submitbutton">
+                      <button>Submit</button>
+                      <button onClick={close}>Back</button>
+                  </div>
+                </div>
+            </Modal>
             <div className="video-container">
               <video
                 src={post.video_url}
@@ -158,7 +195,7 @@ export default function Recommend() {
                   src={star}
                   alt="Star"
                   className="star-icon icon"
-                  onClick={() => alert('Star icon clicked!')}
+                  onClick={open}
                 />
               </div>
               <div className="texts">
