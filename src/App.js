@@ -9,6 +9,7 @@ import Myprofile from './Pages/Myprofile';
 import Discover from './Pages/Discover';
 import Products from './Pages/Products';
 import Product from './Pages/Product';
+import Cart from './Pages/Cart';
 import { Route, Routes} from 'react-router-dom';
 import Genretop from './Pages/Genretop';
 import Detail from './Pages/Detail';
@@ -32,6 +33,7 @@ function App() {
       <Route path="/detail/:postId" element={<Detail />} />
       <Route path="/notification" element={<Notification />} />
       <Route path="/dm" element={<DM />} />
+      <Route path="/cart" element={<Cart />} />
     </Routes>
   );
 }

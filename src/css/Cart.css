@@ -1,0 +1,17 @@
+.cart-container{
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+    height: calc(100vh - 48px);
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.cart-container img{
+    width:100%;
+}
