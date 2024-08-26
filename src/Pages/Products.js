@@ -10,7 +10,7 @@ const Products = () => {
     <div className = "products-page">
       <Searchbar  keyword={keyword}/>
       <div className = "products-container">
-        <img src="/products.jpg" className = "products" alt="products"/>
+        <img src="/products.png" className = "products" alt="products"/>
       </div>
       <Footer />
     </div>

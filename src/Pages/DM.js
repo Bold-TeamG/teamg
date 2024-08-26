@@ -64,10 +64,10 @@ const DM = () => {
                         <path d="M20 0 L40 0 L15 20 Z" fill="#F0F0F0" stroke="#ddd" strokeWidth="2" />
                     </svg>
                 </div>
-                <img src="userphoto.jpg" alt="User" />
+                <img src="people3.jpeg" alt="User" />
             </div>
             <div className="dm-input">
-                <input type="text" placeholder="Name" />
+                <input type="text" placeholder="Message..." />
                 <img src="arrow.png" alt="Send" />
             </div>
             <Footer />
