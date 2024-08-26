@@ -138,21 +138,27 @@ footer {
 
 .black-component {
     text-decoration: none;
-    color: #fff;
+    color: #ccc;
 }
 
+
 .black-stroke {
-    stroke: #fff;
+    stroke: #ccc;
 }
 
 .black-fill {
-    fill: #fff;
+    fill: #ccc;
     width: 24px;
     height: 24px;
 }
 .black-footer p {
+    color: #ccc;
+}
+
+.community-white {
     color: #fff;
 }
+
 .joboffer-container{
     padding:30px;
     width:70%;
@@ -193,3 +199,8 @@ footer {
     border-radius: 10px; 
     border-color: #a988eb;
 }
+
+.community-white svg{
+    fill: #fff;
+}
+
