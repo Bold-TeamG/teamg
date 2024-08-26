@@ -41,8 +41,9 @@ const Product = () => {
     <div className="product-page">
       <Searchbar />
       <div className="product-container">
+        <div className = "product-photo">
         <img src={productData ? productData.img_url : 'https://placehold.jp/362x362.png'} alt="art" />
-            
+        </div>
         <section className="product-description">
             <div className = "wrapper">
             <div className="product-title">

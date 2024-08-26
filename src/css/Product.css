@@ -20,8 +20,11 @@ p{
     font-size: 25px;
     font-weight: bold;
 }
-.product-container img{
-    width:100%;
+.product-photo img{
+    width:80%;
+    margin: 0 auto;
+    display: block; 
+
 }
 .product-title{
     padding:20px 0;

@@ -21,7 +21,7 @@ const DMNotification = () => {
         <img src="arrow.png" alt="Arrow" />
       </div>
 
-      <div className="notification" onClick={handleClick}>
+      <div className="notification">
         <img src="people1.jpg" alt="User" />
         <div className="notification-detail">
           <label>You have a job offer from Lily</label>

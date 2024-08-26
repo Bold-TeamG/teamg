@@ -1,7 +1,12 @@
 .dm-container{
     font-family: Arial, sans-serif;
     background-color: #adadadbc;
-    height: 100vh;
+    height: calc(100vh - 60px);
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    position:relative;
 }
 
 .dm-body img{
@@ -10,13 +15,20 @@
     height:60px;
     border-radius: 100%;
 }
+.message{
+    display: flex;
+    flex-direction:column ;
+}
 
 .dm-input{
-    margin-top: 210px;
+    width:100%;
+    position: absolute;
+    bottom: 0;
     display: flex;
     justify-content: center;
     border-bottom: 1px solod #ddd;
 }
+
 .dm-input img{
     width:50px;
     height:52px;
