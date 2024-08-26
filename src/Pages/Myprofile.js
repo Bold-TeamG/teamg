@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState, createRef } from 'react';
 import Footer from '../Components/footer';
 import Gallery from '../Components/gallery'; 
+import NotificationSwitcher from './NotificationSwitcher'; 
 import '../css/Myprofile.css';
 
 import { doc, getDoc } from 'firebase/firestore';
@@ -125,8 +126,8 @@ const Myprofile = () => {
   return (
     <div className="myprofile-page">
       <div className="myaccount-header">
-            <div className="bell-icon"><img src="bell.png" alt="bell"/></div>
-            <div className="cart-icon"><img src="cart.png" alt="cart"/></div>
+            <a href = '/notification' className="bell-icon"><img src="cart.png" alt="bell"/></a>
+            <div className="cart-icon"><img src="bell.png" alt="cart"/></div>
       </div>
       <div className="myprofile-container">
         <div className="myprofile-info">

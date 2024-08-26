@@ -12,7 +12,10 @@ import Product from './Pages/Product';
 import { Route, Routes} from 'react-router-dom';
 import Genretop from './Pages/Genretop';
 import Detail from './Pages/Detail';
-
+import Notification from './Pages/NotificationSwitcher';
+import { useModal } from 'react-hooks-use-modal';
+import DM from './Pages/DM';
+　
 function App() {
  
   return (
@@ -27,6 +30,8 @@ function App() {
       <Route path="/product/:productId" element={<Product />} />
       <Route path="/genre/:genreId" element={<Genretop />} />
       <Route path="/detail/:postId" element={<Detail />} />
+      <Route path="/notification" element={<Notification />} />
+      <Route path="/dm" element={<DM />} />
     </Routes>
   );
 }

@@ -1,0 +1,32 @@
+.dm-container{
+    font-family: Arial, sans-serif;
+    background-color: #adadadbc;
+    height: 100vh;
+}
+
+.dm-body img{
+    width:50px;
+    border-radius: 100%;
+}
+
+.dm-input{
+    margin-top: 57px;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solod #ddd;
+}
+.dm-input img{
+    width:50px;
+    height:52px;
+    background-color: white;
+}
+
+.dm-input input{
+    width: 100%;
+    height: 50px;
+    outline:none;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;;
+}
+

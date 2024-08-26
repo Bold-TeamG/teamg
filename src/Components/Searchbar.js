@@ -35,8 +35,8 @@ export default function Searchbar({keyword}) {
             <div className="search-bar">
                 <input type="text" placeholder="Search" value={keyword ? keyword : ""}/>
             </div> 
-            <div className="bell-icon"><img src="/bell.png" alt="bell"/></div>
-            <div className="cart-icon"><img src="/cart.png" alt="cart"/></div>
+            <a href = "/notification" className="cart-icon"><img src="/cart.png" alt="bell"/></a>
+            <div className="cart-icon"><img src="/bell.png" alt="bell"/></div>
         </div>
     );
 }
