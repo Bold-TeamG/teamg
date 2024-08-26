@@ -50,13 +50,13 @@ export default function Genretop() {
                     <img src={genreData ? genreData.thunbnail3 : "https://placehold.jp/150x150.png"}
                         alt="Item"
                         className="item-icon"></img>
-                    <img src="https://placehold.jp/150x150.png"
+                    <img src={genreData ? genreData.thunbnail4 : "https://placehold.jp/150x150.png"}
                         alt="Item"
                         className="item-icon"></img>
-                    <img src="https://placehold.jp/150x150.png"
+                    <img src={genreData ? genreData.thunbnail5 : "https://placehold.jp/150x150.png"}
                         alt="Item"
                         className="item-icon"></img>
-                    <img src="https://placehold.jp/150x150.png"
+                    <img src={genreData ? genreData.thunbnail6 : "https://placehold.jp/150x150.png"}
                         alt="Item"
                         className="item-icon"></img>
                 </div>
