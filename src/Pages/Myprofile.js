@@ -127,7 +127,7 @@ const Myprofile = () => {
     <div className="myprofile-page">
       <div className="myaccount-header">
             <a href = '/notification' className="bell-icon"><img src="cart.png" alt="bell"/></a>
-            <div className="cart-icon"><img src="bell.png" alt="cart"/></div>
+            <a href = '/cart' className="cart-icon"><img src="bell.png" alt="cart"/></a>
       </div>
       <div className="myprofile-container">
         <div className="myprofile-info">
