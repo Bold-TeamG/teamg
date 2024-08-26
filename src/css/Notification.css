@@ -12,7 +12,6 @@
     margin-left:20px;
 }
 .notification-detail p{
-    margin-left:20px;
     padding:5px 0;
 }
 .notification{
@@ -23,6 +22,7 @@
     border-bottom: 1px solid #090909;
 }
 .notification label{
+    justify-content: space-between;
     font-weight: bold;
 }
 .notification img{

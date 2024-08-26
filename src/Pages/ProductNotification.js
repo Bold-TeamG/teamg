@@ -7,18 +7,16 @@ const ProductNotification = () => {
         <div className = "notification">
             <img src = "bell.png" />
             <div class = "notification-detail">
-            <label>You have job offer from Kendalle</label>
-                <p>Job: concert </p>
-                <p>Place: central park </p>
+                <label>Would you like to buy something?</label>
+                <p>You have 10 recommended items</p>
             </div>
             <img src = "arrow.png" />
         </div>
         <div className = "notification">
             <img src = "cart.png" />
             <div class = "notification-detail">
-                <label>You have job offer from Kendalle</label>
-                <p>Job: concert </p>
-                <p>Place: central park </p>
+                <label>Purchase Notification</label>
+                <p>One of your listed items has been sold!</p>
             </div>
             <img src = "arrow.png" />
         </div>

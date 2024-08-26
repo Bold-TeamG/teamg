@@ -39,7 +39,7 @@ export default function Genretop() {
                 <p>{genreData ? genreData.comment : 'Loading...'}</p>
             </div>
             <div className="creator">
-                <h3>Top creators</h3>
+                <h3>Top clips</h3>
                 <div className="onevoneimages">
                     <img src={genreData ? genreData.thunbnail1 : "https://placehold.jp/150x150.png"}
                         alt="Item"
@@ -90,14 +90,20 @@ export default function Genretop() {
                 </div>
             </div>
             <div className="keyWords">
-                <p>Pencil</p>
-                <p>Eraser</p>
-                <p>Paper or Canvas</p>
-                <p>Paint</p>
-                <p>Brushes</p>
-                <p>Palette</p>
-                <p>Water Container</p>
-                <p>Masking Tape</p>
+                {genreData ? genreData.keywords.map((keyword, index) => (
+                        <p key={index}>{keyword}</p>
+                    )) : (
+                        <>
+                            <p>Pencil</p>
+                            <p>Eraser</p>
+                            <p>Paper or Canvas</p>
+                            <p>Paint</p>
+                            <p>Brushes</p>
+                            <p>Palette</p>
+                            <p>Water Container</p>
+                            <p>Masking Tape</p>
+                        </>
+                    )}
             </div>
             </div>
             <Footer />
