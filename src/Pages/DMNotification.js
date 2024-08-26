@@ -12,19 +12,19 @@ const DMNotification = () => {
   return (
     <div className="notification-container">
       <div className="notification" onClick={handleClick}>
-        <img src="userphoto.jpg" alt="User" />
+        <img src="people3.jpeg" alt="User" />
         <div className="notification-detail">
-          <label>You have a job offer from Kendalle</label>
-          <p>Job: concert</p>
-          <p>Place: Central Park</p>
+          <label>You have a job offer from John</label>
+          <p>Job: Exhibition</p>
+          <p>Place: Moma museum</p>
         </div>
         <img src="arrow.png" alt="Arrow" />
       </div>
 
       <div className="notification" onClick={handleClick}>
-        <img src="userphoto.jpg" alt="User" />
+        <img src="people1.jpg" alt="User" />
         <div className="notification-detail">
-          <label>You have a job offer from Kendalle</label>
+          <label>You have a job offer from Lily</label>
           <p>Job: concert</p>
           <p>Place: Central Park</p>
         </div>
