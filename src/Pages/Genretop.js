@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import React, { useEffect, useRef, useState, createRef } from 'react';
 import { doc, getDoc } from 'firebase/firestore';
 import {db, storage} from '../firebase/index';
+import { Link } from 'react-router-dom';
 
 export default function Genretop() {
     const {genreId} = useParams();
@@ -91,7 +92,7 @@ export default function Genretop() {
             </div>
             <div className="keyWords">
                 {genreData ? genreData.keywords.map((keyword, index) => (
-                        <p key={index}>{keyword}</p>
+                        <Link to={`/products/${keyword}`}><p key={index}>{keyword}</p></Link>
                     )) : (
                         <>
                             <p>Pencil</p>
