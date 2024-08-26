@@ -6,18 +6,17 @@ const CampaignNotification = () => {
         <div className = "notification">
             <img src = "items.png" />
             <div class = "notification-detail">
-            <label>You have job offer from Kendalle</label>
-                <p>Job: concert </p>
-                <p>Place: central park </p>
+                <label>Summer campaign</label>
+                <p>Offer special discounts on summer clothes.</p>
             </div>
             <img src = "arrow.png" />
         </div>
         <div className = "notification">
             <img src = "items.png" />
             <div class = "notification-detail">
-                <label>You have job offer from Kendalle</label>
-                <p>Job: concert </p>
-                <p>Place: central park </p>
+                <label>10% off campaign</label>
+                <p>Right now, you can purchase leisure equipment</p>
+                <p>with a 10% discount!</p>
             </div>
             <img src = "arrow.png" />
         </div>
