@@ -5,6 +5,7 @@ import '../css/Product.css';
 import { useParams } from 'react-router-dom';
 import { doc, getDoc, collection, query, where, getDocs } from 'firebase/firestore';
 import { db } from '../firebase/index';
+import { Link, useLocation } from 'react-router-dom';
 
 const Product = () => {
   const { productId } = useParams();
@@ -85,16 +86,34 @@ const Product = () => {
             <button>Add to cart</button>
           </div>
         </section>
-      <div className = "user-profile">
-             <a href ={`/profile/${productData ? productData.user_id : ''}`} rel="noopener noreferrer">
+        <Link to={`/profile/${productData ? productData.user_id : ''}`}>
+        <div className = "user-profile">
               <img 
                 src={userData && userData.icon_photo ? userData.icon_photo : "https://placehold.jp/100x100.png"} 
                 alt="profile" 
               />
-              <h4>{userData ? userData.name : 'Loading...'}</h4>
-              <p>{userData ? userData.comment : 'Loading user comment...'}</p>
-            </a>
-      </div>
+              <div className='product-texts'>
+                <h4>{userData ? userData.name : 'Loading...'}</h4>
+                <p>{userData ? userData.comment : 'Loading user comment...'}</p>
+              </div>
+              {/* 右矢印 */}
+        <svg 
+          width="36" 
+          height="36" 
+          viewBox="0 0 24 24" 
+          fill="none" 
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path 
+            d="M9 5L16 12L9 19" 
+            stroke="#000" 
+            stroke-width="2" 
+            stroke-linecap="round" 
+            stroke-linejoin="round"
+          />
+        </svg>
+        </div>
+      </Link>
       <div className="related-posts">
         <h3>Related Posts</h3>
         <div className="posts-grid">

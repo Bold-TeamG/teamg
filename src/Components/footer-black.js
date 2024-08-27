@@ -72,7 +72,7 @@ export default function FooterBlack() {
           width="20px" 
           version="1.1" 
           viewBox="0 0 455.862 455.862" 
-          className='white-fill balck-fill'
+          className='white-fill balck-fill dm'
         >
           <g stroke-width="0"></g>
           <g stroke-linecap="round" stroke-linejoin="round"></g>

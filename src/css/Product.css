@@ -53,21 +53,53 @@ p{
     border-color: #a988eb;
 }
 .user-profile {
+    width: 90%;
+    padding: 5%;
     display: flex;
     align-items: center; 
-    justify-content: space-between; 
+}
+
+.user-profile a {
+    text-decoration: none;
+}
+
+.product-texts {
+    padding: 5%;
+    color: #000;
+}
+
+.product-texts h4 {
+    margin: 8px 0;
 }
 
 .user-profile img{
     border-radius: 100%;
-    width:100px;
-    height:100px;
+    max-width:48px;
+    aspect-ratio: 1/1;
+}
+
+.related-posts {
+    width: 90%;
+    margin: 5%;
 }
 
 .posts-grid {
-    display:flex
+    display:flex;
+    overflow-x: scroll;
+    gap: 10px;
 }
 
-.posts-grid img{
-    width:10%;
+.post-item {
+    width: 33%;
+
+}
+
+.post-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.post-item a {
+    text-decoration: none;
+    color: #000;
 }
