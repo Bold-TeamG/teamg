@@ -28,7 +28,7 @@ export default function Recommend() {
 
       try {
         const postsCollection = collection(db, 'posts');
-        const q = query(postsCollection, where('is_music', '==', true)); // type_id == 1 の条件を追加
+        const q = query(postsCollection, where('is_handmade', '==', true)); // type_id == 1 の条件を追加
         const postsSnapshot = await getDocs(q);
         const postsList = postsSnapshot.docs.map(doc => ({
           id: doc.id,
