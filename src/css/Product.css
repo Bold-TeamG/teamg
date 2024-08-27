@@ -20,6 +20,19 @@ p{
     font-size: 25px;
     font-weight: bold;
 }
+
+.product-photo {
+    position: relative;
+}
+
+.likes{
+    width: 10%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-left: auto;
+}
+
 .product-photo img{
     width:80%;
     margin: 0 auto;
@@ -31,6 +44,8 @@ p{
 }
 .wrapper {
     display:flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .wrapper img{
@@ -38,9 +53,7 @@ p{
     height: 50px;
     margin-left: auto;
 }
-.likes{
-    margin-left: auto;
-}
+
 
 .add-cart button{
     width:100%;

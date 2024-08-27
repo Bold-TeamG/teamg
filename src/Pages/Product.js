@@ -67,21 +67,23 @@ const Product = () => {
       <div className="product-container">
         <div className="product-photo">
           <img src={productData ? productData.img_url : 'https://placehold.jp/362x362.png'} alt="art" />
+          <div className="likes">
+              <img src='/heart.png' alt="heart" />
+              <p>1 Like</p>
+          </div>
         </div>
         <section className="product-description">
           <div className="wrapper">
             <div className="product-title">
               <label>{productData ? productData.name : 'Loading...'}</label>
+              <p>{productData ? productData.comment : 'Loading...'}</p>
             </div>
-            <div className="likes">
-              <img src='/heart.png' alt="heart" />
-              <p>1 Like</p>
-            </div>
-          </div>
-          <div className="product-price">
+            <div className="product-price">
             <label>{productData ? productData.price : 'Loading...'}</label>
-            <p>{productData ? productData.comment : 'Loading...'}</p>
+            
           </div>
+          </div>
+          
           <div className="add-cart">
             <button>Add to cart</button>
           </div>
