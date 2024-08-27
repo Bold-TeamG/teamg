@@ -5,7 +5,7 @@ p{
     font-family: Arial, sans-serif;
     background-color: #fff;
     margin-top: 59px;
-    height: calc(100vh - 108px);
+    height: calc(100svh - 108px);
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
     -ms-overflow-style: none;
