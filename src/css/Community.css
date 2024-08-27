@@ -58,6 +58,13 @@
     height: 40px;
 }
 
+.heart-icon  {
+    margin: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+
 .texts {
     position: absolute;
     bottom: 20px; 
