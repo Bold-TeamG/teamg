@@ -1,7 +1,7 @@
 .dm-container{
     font-family: Arial, sans-serif;
     background-color: #adadadbc;
-    height: calc(100vh - 60px);
+    height: calc(100svh - 60px);
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
     -ms-overflow-style: none;

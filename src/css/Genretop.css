@@ -1,6 +1,6 @@
 .genreBox {
     margin-top: 59px;
-    height: calc(100vh - 107px);
+    height: calc(100svh - 107px);
     overflow-y: scroll;
     padding: 0 5%;
 }
