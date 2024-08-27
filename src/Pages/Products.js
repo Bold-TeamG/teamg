@@ -35,7 +35,7 @@ const Products = () => {
       <Searchbar keyword={Data ? Data.goods_name : ''} />
       <div className="products-container">
         <img 
-          src={Data ? Data.products_url : "/products.png"} 
+          src={Data ? Data.products_url : "/loading.png"} 
           className="products" 
           alt="products"
         />

@@ -8,7 +8,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 
 const NotificationSwitcher = () => {
     // State to track the active tab
-    const [activeTab, setActiveTab] = useState('campaign');
+    const [activeTab, setActiveTab] = useState('dm');
     const navigate = useNavigate();
     const location = useLocation();
 

@@ -10,7 +10,7 @@ const ProductNotification = () => {
                 <label>Would you like to buy something?</label>
                 <p>You have 10 recommended items</p>
             </div>
-            <img src = "arrow.png" />
+            <img src = "white.jpeg" />
         </div>
         <div className = "notification">
             <img src = "cart.png" />
@@ -18,7 +18,7 @@ const ProductNotification = () => {
                 <label>Purchase Notification</label>
                 <p>One of your listed items has been sold!</p>
             </div>
-            <img src = "arrow.png" />
+            <img src = "white.jpeg" />
         </div>
     </div>
       );
