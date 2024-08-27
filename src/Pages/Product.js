@@ -69,7 +69,6 @@ const Product = () => {
           <img src={productData ? productData.img_url : 'https://placehold.jp/362x362.png'} alt="art" />
           <div className="likes">
               <img src='/heart.png' alt="heart" />
-              <p>1 Like</p>
           </div>
         </div>
         <section className="product-description">
@@ -90,6 +89,7 @@ const Product = () => {
         </section>
         <Link to={`/profile/${productData ? productData.user_id : ''}`}>
         <div className = "user-profile">
+          <div className='product-left'>
               <img 
                 src={userData && userData.icon_photo ? userData.icon_photo : "https://placehold.jp/100x100.png"} 
                 alt="profile" 
@@ -98,14 +98,14 @@ const Product = () => {
                 <h4>{userData ? userData.name : 'Loading...'}</h4>
                 <p>{userData ? userData.comment : 'Loading user comment...'}</p>
               </div>
-              {/* 右矢印 */}
-        <svg 
+          </div>
+          <svg 
           width="36" 
           height="36" 
           viewBox="0 0 24 24" 
           fill="none" 
           xmlns="http://www.w3.org/2000/svg"
-        >
+          >
           <path 
             d="M9 5L16 12L9 19" 
             stroke="#000" 
@@ -113,7 +113,7 @@ const Product = () => {
             stroke-linecap="round" 
             stroke-linejoin="round"
           />
-        </svg>
+          </svg>
         </div>
       </Link>
       <div className="related-posts">

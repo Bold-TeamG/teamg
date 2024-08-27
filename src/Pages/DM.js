@@ -43,8 +43,8 @@ const DM = () => {
       <header>
         <div className="dm-back-icon" onClick={handleBackClick}>
           <svg 
-            width="60" 
-            height="60" 
+            width="36" 
+            height="36" 
             viewBox="0 0 24 24" 
             fill="none" 
             xmlns="http://www.w3.org/2000/svg"
@@ -85,8 +85,22 @@ const DM = () => {
         <img src={currentJobOffer.image} alt="User" />
       </div>
       <div className="dm-input">
-        <input type="text" placeholder="Message..." />
-        <img src="arrow.png" alt="Send" />
+        <input type="text" placeholder="　　Message..." />
+        <svg 
+          width="36" 
+          height="36" 
+          viewBox="0 0 24 24" 
+          fill="none" 
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path 
+            d="M9 5L16 12L9 19" 
+            stroke="#000" 
+            stroke-width="2" 
+            stroke-linecap="round" 
+            stroke-linejoin="round"
+          />
+        </svg>
       </div>
       <Footer />
     </div>

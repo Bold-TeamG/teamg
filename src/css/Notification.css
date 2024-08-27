@@ -20,6 +20,7 @@
     display: flex;
     padding:20px;
     border-bottom: 1px solid #090909;
+    align-items: center;
 }
 .notification label{
     justify-content: space-between;
