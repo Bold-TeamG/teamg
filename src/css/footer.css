@@ -74,8 +74,12 @@ footer {
   color: #000; /* テキストの色を変更 */
 }
 
+.component.active path {
+  color: #000; /* テキストの色を変更 */
+}
+
 .dm {
-  padding: 2px 2px;
+    padding: 2px 2px;
 }
 
   
