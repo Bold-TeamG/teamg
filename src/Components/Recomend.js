@@ -208,7 +208,7 @@ export default function Recommend() {
                     alt="Item"
                     className="item-icon side-item"
                   /></Link>
-                <Link to={`/products/${post.goods_name}`}>
+                <Link to={`/products/${post.product_id}`}>
                   <img src={post.goods_url}
                     alt="Item"
                     className="item-icon side-item"

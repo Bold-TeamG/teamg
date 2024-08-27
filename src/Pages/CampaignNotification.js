@@ -9,7 +9,7 @@ const CampaignNotification = () => {
                 <label>Summer campaign</label>
                 <p>Offer special discounts on summer clothes.</p>
             </div>
-            <img src = "arrow.png" />
+            <img src = "white.jpeg" />
         </div>
         <div className = "notification">
             <img src = "items.png" />
@@ -18,7 +18,7 @@ const CampaignNotification = () => {
                 <p>Right now, you can purchase leisure equipment</p>
                 <p>with a 10% discount!</p>
             </div>
-            <img src = "arrow.png" />
+            <img src = "white.jpeg" />
         </div>
     </div>
   );

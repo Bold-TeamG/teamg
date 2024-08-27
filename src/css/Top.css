@@ -1,0 +1,29 @@
+.toppage {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    margin: 0 auto;
+}
+
+.topcontent {
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.topcontent img {
+    width: 100%;
+}
+
+.topcontent button {
+    width: 70%;
+    margin: 10px 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #677ccf;
+    background-color: #fff;
+    border-radius: 10px;
+    border-color: #677ccf;
+}
