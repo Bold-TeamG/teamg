@@ -52,3 +52,22 @@ p{
     border-radius: 10px; 
     border-color: #a988eb;
 }
+.user-profile {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+}
+
+.user-profile img{
+    border-radius: 100%;
+    width:100px;
+    height:100px;
+}
+
+.posts-grid {
+    display:flex
+}
+
+.posts-grid img{
+    width:10%;
+}
