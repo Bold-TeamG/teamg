@@ -12,7 +12,7 @@ const Top = () => {
   return (
     <div className= "toppage">
         <div className = "topcontent">
-            <img src="top.jpg" alt="Top page banner" />
+            <img src="top.png" alt="Top page banner" />
             <button onClick={handleClick}>Start</button>
         </div>
     </div>
