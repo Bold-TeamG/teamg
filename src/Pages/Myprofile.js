@@ -139,6 +139,10 @@ const Myprofile = () => {
             {[...Array(4)].map((_, i) => <img key={i} src="star_black.png" alt="star_black" />)}
             <img src="star_white.png" alt="star_white" />
           </div>
+          <div className='titles'>
+            <img src='/biginner.png'></img>
+            <img src='/to.png'></img>
+          </div>
           <div className="myprofile-stats">
             <div className="myprofile-components">
               <h2>22</h2>

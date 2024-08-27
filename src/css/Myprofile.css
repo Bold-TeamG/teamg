@@ -117,4 +117,14 @@
     margin: 5px;
     object-fit: cover;
   }
+
+  .titles {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+  }
   
+  .titles img {
+    width: 40px;
+    height: 40px;
+  }
