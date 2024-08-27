@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../css/NotificationSwitcher.css';
+import Footer from '../Components/footer';
 
 const DMNotification = () => {
   const navigate = useNavigate();
@@ -16,6 +17,9 @@ const DMNotification = () => {
 
   return (
     <div className="notification-container">
+      <div className = "dmheader">
+        <p>DM</p>
+      </div>
       <div className="notification" onClick={() => handleClick(1)}>
         <img src="people3.jpeg" alt="User" />
         <div className="notification-detail">
@@ -35,6 +39,7 @@ const DMNotification = () => {
         </div>
         <img src="arrow.png" alt="Arrow" />
       </div>
+      <Footer />
     </div>
   );
 };

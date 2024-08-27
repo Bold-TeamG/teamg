@@ -8,7 +8,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 
 const NotificationSwitcher = () => {
     // State to track the active tab
-    const [activeTab, setActiveTab] = useState('dm');
+    const [activeTab, setActiveTab] = useState('campaign');
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -17,8 +17,6 @@ const NotificationSwitcher = () => {
         switch (activeTab) {
             case 'product':
                 return <ProductNotification />;
-            case 'dm':
-                return <DMNotification />;
             case 'campaign':
                 return <CampaignNotification />;
             default:
@@ -49,13 +47,6 @@ const NotificationSwitcher = () => {
                   />
                 </svg>
               </div>
-              <button
-                    className={`notification-switcher-button ${activeTab === 'dm' ? 'active' : ''}`}
-                    onClick={() => setActiveTab('dm')}
-                    aria-pressed={activeTab === 'dm'}
-                >
-                    DM
-                </button>
                 <button
                     className={`notification-switcher-button ${activeTab === 'campaign' ? 'active' : ''}`}
                     onClick={() => setActiveTab('campaign')}

@@ -3,6 +3,7 @@ import Footer from './footer';
 import '../css/Community.css'; // CSSファイルをインポート
 import comment from '../image/comment.svg';
 import heart from '../image/heart.svg';
+import heartRed from '../image/heartRed.svg';
 import star from '../image/star.svg';
 import share from '../image/share.svg';
 import person from '../image/person.svg';
@@ -120,7 +121,14 @@ export default function Recommend() {
 
   const View = ({ posts }) => {
     const [muted, setMuted] = useState(true);
-
+    const [liked, setLiked] = useState([]);
+    const handleLikeClick = (index) => {
+      setLiked((prevLiked) => {
+        const newLiked = [...prevLiked];
+        newLiked[index] = !newLiked[index]; // Toggle like state
+        return newLiked;
+      });
+    };
     return (
       <div ref={scrollViewRef} className="scroll-view"> {/* scrollViewRef を div に割り当て */}
         {posts.map((post, i) => (
@@ -167,10 +175,10 @@ export default function Recommend() {
                     className="person-icon icon"
                   /></Link>
                 <img
-                  src={heart}
+                  src={liked[i] ? heartRed : heart}
                   alt="heart"
                   className="heart-icon icon"
-                  onClick={() => alert('Heart icon clicked!')}
+                  onClick={() => handleLikeClick(i)}
                 />
                 <img
                   src={comment}

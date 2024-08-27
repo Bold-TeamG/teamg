@@ -7,6 +7,7 @@ import Profile from './Pages/Profile';
 import PostSwitcher from './Pages/PostSwitcher'; 
 import Myprofile from './Pages/Myprofile';
 import Discover from './Pages/Discover';
+import DMNotification from './Pages/DMNotification';
 import Products from './Pages/Products';
 import Product from './Pages/Product';
 import Top from './Pages/Top';
@@ -33,6 +34,7 @@ function App() {
       <Route path="/genre/:genreId" element={<Genretop />} />
       <Route path="/detail/:postId" element={<Detail />} />
       <Route path="/notification" element={<Notification />} />
+      <Route path="/dmnotification" element={<DMNotification />} />
       <Route path="/dm" element={<DM />} />
       <Route path="/cart" element={<Cart />} />
     </Routes>
