@@ -24,6 +24,9 @@ const UserComponent = ({ user }) => {
       <img src={user && user.icon_photo ? user.icon_photo : "https://placehold.jp/100x100.png"} alt="profile" />
       </div>
       <h2>{name || 'No name provided'}</h2>
+      <div className="profile-reputation">
+            <img src= {user && user.title ? user.title  : "Loading"} alt="star_white" />
+      </div>
       <p>{comment || 'No comment available'}</p>
 
       <div className="profile-stats">
