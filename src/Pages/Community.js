@@ -84,7 +84,7 @@ export default function Community() {
         </div>
         <nav id="g-nav" className={navActive ? 'panelactive' : ''}>
           <div className="community-icon-items">
-              {['Art','Music','Handmade','Tradingcard', 'Handbags', 'Home', 'Vintage', 'Beauty', 'Kids', 'Sports', 'Handmade', 'Office', 'Pet', 'Outdoor', 'Tools', 'Books', 'Other'].map((item, index) => (
+              {['Art','Music','Handmade','Tradingcard', 'Handbags', 'Home', 'Vintage', 'Beauty', 'Kids', 'Sports',  'Office', 'Pet', 'Outdoor', 'Tools', 'Books', 'Other'].map((item, index) => (
                   <div key={item} className="community-icon-item">
                       <h6>{item}</h6>
                       <label className="toggle" htmlFor={`toggle-${index}`}>
