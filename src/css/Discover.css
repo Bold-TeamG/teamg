@@ -75,6 +75,7 @@ a {
 
 .product-grid img {
     width: 100%;
+    aspect-ratio: 3/5;
     height: auto;
 }
 
@@ -107,4 +108,15 @@ a {
 
 a {
     color: black;
+}
+
+.recommended-products img{
+    aspect-ratio: 1/1;
+}
+.user-section{
+    padding-left:10px;
+}
+.user-section img{
+    width:50px;
+    height:50px;
 }
