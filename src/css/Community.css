@@ -116,20 +116,22 @@
 }
 
 .tab-indicator {
-    position: fixed;
-    top: 0;
+    top:0;
+    position: fixed; 
     width: 100%;
     display: flex;
     justify-content: center;
     margin: 20px 0;
     overflow: hidden;
-  }
-  .tab-indicator-wrapper {
+}
+
+.tab-indicator-wrapper{
     display: flex;
     justify-content: center;
     transform: translateX(0); /* JavaScriptで動かすために初期値を設定 */
     transition: transform 0.3s ease; /* 中央に移動するアニメーションを追加 */
 }
+
 .tab {
     padding: 10px 15px;
     margin: 0 10px;
@@ -229,6 +231,166 @@ footer {
     padding: 2px 2px;
 }
 
+.openbtn {
+    position: absolute;
+    left: 0; /* Align to the right */
+    z-index: 1000;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+}
+
+.openbtn span {
+    display: inline-block;
+    transition: all .4s;
+    position: absolute;
+    top:14px;
+    left: 20px;
+    height: 3px;
+    border-radius: 2px;
+    background-color: #ffffff;
+    width: 70%;
+}
+.openbtn span:nth-of-type(1) {
+    top:22px; 
+  }
+  
+  .openbtn span:nth-of-type(2) {
+    top:30px;
+  }
+
+  #g-nav {
+    /* Adjust the start position to be off-screen to the left */
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: -40%; /* Move it off-screen to the left */
+    width: 40%;
+    height: 100vh; /* Full height */
+    background: #434343;
+    opacity: 0.8;
+    transition: all 0.6s; /* Smooth transition */
+  }
+
+/*アクティブクラスがついたら位置を0に*/
+#g-nav.panelactive{
+    left: 0;
+}
+
+/*ナビゲーションの縦スクロール*/
+#g-nav.panelactive #g-nav-list{
+    /*ナビの数が増えた場合縦スクロール*/
+    position: fixed;
+    z-index: 999; 
+    width: 100%;
+    height: 100vh;/*表示する高さ*/
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/*ナビゲーション*/
+#g-nav ul {
+    /*ナビゲーション天地中央揃え*/
+    position: absolute;
+    z-index: 999;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+
+/*リストのレイアウト設定*/
+
+#g-nav li{
+  list-style: none;
+    text-align: center;
+}
+
+#g-nav li a{
+  color: #333;
+  text-decoration: none;
+  padding:10px;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+}
+
+.community-icon-items {
+    margin-top:60px;
+    padding-left:0;
+    display:flex;
+    flex-direction: column;
+    height: calc(100svh - 108px);
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .community-icon-item {
+    width:100%;
+    margin: 10px;
+    text-align: center;
+    display: flex;
+  }
+  
+  .community-icon-item img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 5px;
+  }
+  
+  .community-icon-item h6 {
+    width:80px;
+    padding-top:2px;
+    font-size: 14px;
+    color: #ffffff;
+  }
+  
+  h6 {
+    margin:0;
+  }
+
+  .toggle {
+    padding-left:10px;
+    --width: 30px;
+    --height: calc(var(--width) / 2);
+    --border-radius: calc(var(--height) / 2);
+    display: inline-block;
+    cursor: pointer;
+}
+
+.toggle__input {
+    display: none;
+}
+.toggle__fill {
+    position: relative;
+    width: var(--width);
+    height: var(--height);
+    border-radius: var(--border-radius);
+    background: #dddddd;
+    transition: background 0.2s;
+}
+.toggle__fill::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: var(--height);
+    width: var(--height);
+    background: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    border-radius: var(--border-radius);
+    transition: transform 0.2s;
+}
+.toggle__input:checked ~ .toggle__fill {
+    background: #000000;
+}
+
+.toggle__input:checked ~ .toggle__fill::after {
+    transform: translateX(var(--height));
+}
+
 .comp-each {
     position: relative;
 }
@@ -239,4 +401,5 @@ footer {
     top: 10px;
     z-index: 8;
 }
+
 

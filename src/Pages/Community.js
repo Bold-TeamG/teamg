@@ -6,16 +6,15 @@ import Handmade from "../Components/Handmade";
 import Music from "../Components/Music";
 import Following from "../Components/Following";
 import Tradingcard from '../Components/Tradingcard';
-import Footer from '../Components/footer';
 import FooterBlack from '../Components/footer-black';
 import '../css/Community.css';
 
 export default function Community() {
   const [activeTab, setActiveTab] = useState(0);
-  const tabCount = 6; // タブの数
+  const [navActive, setNavActive] = useState(false);
+  const tabCount = 6; // Number of tabs
 
   useEffect(() => {
-    // 初回レンダリング時にインジケーターの位置を調整
     updateIndicatorPosition(0);
   }, []);
 
@@ -40,8 +39,16 @@ export default function Community() {
   const updateIndicatorPosition = (newTab) => {
     const indicatorWrapper = document.querySelector('.tab-indicator-wrapper');
     const tabWidth = indicatorWrapper.offsetWidth / tabCount;
-    const translateX = tabWidth * (newTab - (tabCount / 2 - 0.5)); 
+    const translateX = tabWidth * (newTab - (tabCount / 2 - 0.5));
     indicatorWrapper.style.transform = `translateX(${-translateX}px)`;
+  };
+
+  const toggleNav = () => {
+    setNavActive(!navActive);
+  };
+
+  const handleNavLinkClick = () => {
+    setNavActive(false);
   };
 
   return (
@@ -55,6 +62,23 @@ export default function Community() {
         {activeTab === 5 && <div key="tab6"><Tradingcard/></div>}
       </div>  
       <div className="tab-indicator">
+        <div className={`openbtn ${navActive ? 'active' : ''}`} onClick={toggleNav}>
+          <span></span><span></span><span></span>
+        </div>
+        <nav id="g-nav" className={navActive ? 'panelactive' : ''}>
+          <div className="community-icon-items">
+              {['Art','Music','Handmade','Tradingcard', 'Handbags', 'Home', 'Vintage', 'Beauty', 'Kids', 'Sports', 'Handmade', 'Office', 'Pet', 'Outdoor', 'Tools', 'Books', 'Other'].map((item, index) => (
+                  <div key={item} className="community-icon-item">
+                      <h6>{item}</h6>
+                      <label className="toggle" htmlFor={`toggle-${index}`}>
+                          <input className="toggle__input" type="checkbox" id={`toggle-${index}`} />
+                          <div className="toggle__fill"></div>
+                      </label>
+                  </div>
+              ))}
+          </div>
+
+        </nav>
         <div className="tab-indicator-wrapper">
           <span 
             className={activeTab === 0 ? 'tab active' : 'tab'}
