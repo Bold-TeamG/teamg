@@ -229,3 +229,14 @@ footer {
     padding: 2px 2px;
 }
 
+.comp-each {
+    position: relative;
+}
+
+.leftUp {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 8;
+}
+
