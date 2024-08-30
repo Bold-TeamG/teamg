@@ -14,6 +14,16 @@ export default function Community() {
   const [navActive, setNavActive] = useState(false);
   const tabCount = 6; // Number of tabs
 
+  // Toggle button states
+  const [toggleStates, setToggleStates] = useState({
+    Recommend: true,
+    Following: true,
+    Art: true,
+    Music: true,
+    Handmade: true,
+    Tradingcard: true
+  });
+
   useEffect(() => {
     updateIndicatorPosition(0);
   }, []);
@@ -51,15 +61,22 @@ export default function Community() {
     setNavActive(false);
   };
 
+  const handleToggleChange = (tabName) => {
+    setToggleStates((prevStates) => ({
+      ...prevStates,
+      [tabName]: !prevStates[tabName]
+    }));
+  };
+
   return (
     <div className="App com">
       <div {...handlers} style={{ touchAction: "pan-y" }}>
-        {activeTab === 0 && <div key="tab1"><Recommend/></div>}
-        {activeTab === 1 && <div key="tab2"><Following/></div>}
-        {activeTab === 2 && <div key="tab3"><Art/></div>}
-        {activeTab === 3 && <div key="tab4"><Music/></div>}
-        {activeTab === 4 && <div key="tab5"><Handmade/></div>}
-        {activeTab === 5 && <div key="tab6"><Tradingcard/></div>}
+        {toggleStates.Recommend && activeTab === 0 && <div key="tab1"><Recommend/></div>}
+        {toggleStates.Following && activeTab === 1 && <div key="tab2"><Following/></div>}
+        {toggleStates.Art && activeTab === 2 && <div key="tab3"><Art/></div>}
+        {toggleStates.Music && activeTab === 3 && <div key="tab4"><Music/></div>}
+        {toggleStates.Handmade && activeTab === 4 && <div key="tab5"><Handmade/></div>}
+        {toggleStates.Tradingcard && activeTab === 5 && <div key="tab6"><Tradingcard/></div>}
       </div>  
       <div className="tab-indicator">
         <div className={`openbtn ${navActive ? 'active' : ''}`} onClick={toggleNav}>
@@ -71,51 +88,68 @@ export default function Community() {
                   <div key={item} className="community-icon-item">
                       <h6>{item}</h6>
                       <label className="toggle" htmlFor={`toggle-${index}`}>
-                          <input className="toggle__input" type="checkbox" id={`toggle-${index}`} />
+                          <input
+                            className="toggle__input"
+                            type="checkbox"
+                            id={`toggle-${index}`}
+                            checked={toggleStates[item] ?? false}
+                            onChange={() => handleToggleChange(item)}
+                          />
                           <div className="toggle__fill"></div>
                       </label>
                   </div>
               ))}
           </div>
-
         </nav>
         <div className="tab-indicator-wrapper">
-          <span 
-            className={activeTab === 0 ? 'tab active' : 'tab'}
-            onClick={() => { setActiveTab(0); updateIndicatorPosition(0); }}
-          >
-            Recommend
-          </span>
-          <span 
-            className={activeTab === 1 ? 'tab active' : 'tab'}
-            onClick={() => { setActiveTab(1); updateIndicatorPosition(1); }}
-          >
-            Following
-          </span>
-          <span 
-            className={activeTab === 2 ? 'tab active' : 'tab'}
-            onClick={() => { setActiveTab(2); updateIndicatorPosition(2); }}
-          >
-            Art
-          </span>
-          <span 
-            className={activeTab === 3 ? 'tab active' : 'tab'}
-            onClick={() => { setActiveTab(3); updateIndicatorPosition(3); }}
-          >
-            Music
-          </span>
-          <span 
-            className={activeTab === 4 ? 'tab active' : 'tab'}
-            onClick={() => { setActiveTab(4); updateIndicatorPosition(4); }}
-          >
-            Handmade
-          </span>
-          <span 
-            className={activeTab === 5 ? 'tab active' : 'tab'}
-            onClick={() => { setActiveTab(5); updateIndicatorPosition(5); }}
-          >
-            Tradingcard
-          </span>
+          {toggleStates.Recommend && (
+            <span
+              className={activeTab === 0 ? 'tab active' : 'tab'}
+              onClick={() => { setActiveTab(0); updateIndicatorPosition(0); }}
+            >
+              Recommend
+            </span>
+          )}
+          {toggleStates.Following && (
+            <span
+              className={activeTab === 1 ? 'tab active' : 'tab'}
+              onClick={() => { setActiveTab(1); updateIndicatorPosition(1); }}
+            >
+              Following
+            </span>
+          )}
+          {toggleStates.Art && (
+            <span
+              className={activeTab === 2 ? 'tab active' : 'tab'}
+              onClick={() => { setActiveTab(2); updateIndicatorPosition(2); }}
+            >
+              Art
+            </span>
+          )}
+          {toggleStates.Music && (
+            <span
+              className={activeTab === 3 ? 'tab active' : 'tab'}
+              onClick={() => { setActiveTab(3); updateIndicatorPosition(3); }}
+            >
+              Music
+            </span>
+          )}
+          {toggleStates.Handmade && (
+            <span
+              className={activeTab === 4 ? 'tab active' : 'tab'}
+              onClick={() => { setActiveTab(4); updateIndicatorPosition(4); }}
+            >
+              Handmade
+            </span>
+          )}
+          {toggleStates.Tradingcard && (
+            <span
+              className={activeTab === 5 ? 'tab active' : 'tab'}
+              onClick={() => { setActiveTab(5); updateIndicatorPosition(5); }}
+            >
+              Tradingcard
+            </span>
+          )}
         </div>
       </div>
       <FooterBlack />
