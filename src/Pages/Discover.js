@@ -51,6 +51,80 @@ const Discover = () => {
     <div className="discover-page">
       <Searchbar />
       <div className="discover-container">
+        <div className = "icon-items">
+          <div className = "icon-item">
+            <img alt="Women" class="Image-sc-a7e7e455-1 components__NavImage-sc-995f7d35-1 cxkPKW fCugcv" src="https://u-web-assets.mercdn.net/assets/meganavCategoryIcon/1.svg" />
+            <h6>Women</h6>
+          </div>
+          <div className = "icon-item">
+            <img alt="Men" class="Image-sc-a7e7e455-1 components__NavImage-sc-995f7d35-1 cxkPKW fCugcv" src="https://u-web-assets.mercdn.net/assets/meganavCategoryIcon/2.svg" />
+            <h6>Men</h6>
+          </div>
+          <div className = "icon-item">
+          <img alt="Electronics" class="Image-sc-a7e7e455-1 components__NavImage-sc-995f7d35-1 cxkPKW fCugcv" src="https://u-web-assets.mercdn.net/assets/meganavCategoryIcon/7.svg" />
+            <h6>Electronics</h6>
+          </div>
+          <div className = "icon-item">
+          <img alt="Toys" class="Image-sc-a7e7e455-1 components__NavImage-sc-995f7d35-1 cxkPKW fCugcv" src="https://u-web-assets.mercdn.net/assets/meganavCategoryIcon/1611.svg" />
+            <h6>Toys</h6>
+          </div>
+          <div className = "icon-item">
+            <img alt="Gaming" class="Image-sc-a7e7e455-1 components__NavImage-sc-995f7d35-1 cxkPKW fCugcv" src="https://u-web-assets.mercdn.net/assets/meganavCategoryIcon/84.svg" />
+            <h6>Gaming</h6>
+          </div>
+          <div className = "icon-item">
+            <img alt="Handbags" class="Image-sc-a7e7e455-1 components__NavImage-sc-995f7d35-1 cxkPKW fCugcv" src="https://u-web-assets.mercdn.net/assets/meganavCategoryIcon/21.svg" />
+            <h6>Handbags</h6>
+          </div>
+          <div className = "icon-item">
+          <img alt="Home" class="Image-sc-a7e7e455-1 components__NavImage-sc-995f7d35-1 cxkPKW fCugcv" src="https://u-web-assets.mercdn.net/assets/meganavCategoryIcon/4.svg" />
+            <h6>Home</h6>
+          </div>
+          <div className = "icon-item">
+            <img alt="Vintage" class="Image-sc-a7e7e455-1 components__NavImage-sc-995f7d35-1 cxkPKW fCugcv" src="https://u-web-assets.mercdn.net/assets/meganavCategoryIcon/5.svg" />
+            <h6>Vintage</h6>
+          </div>
+          <div className = "icon-item">
+          <img alt="Beauty" class="Image-sc-a7e7e455-1 components__NavImage-sc-995f7d35-1 cxkPKW fCugcv" src="https://u-web-assets.mercdn.net/assets/meganavCategoryIcon/6.svg" />
+            <h6>Beauty</h6>
+          </div>
+          <div className = "icon-item">
+          <img alt="Kids" class="Image-sc-a7e7e455-1 components__NavImage-sc-995f7d35-1 cxkPKW fCugcv" src="https://u-web-assets.mercdn.net/assets/meganavCategoryIcon/3.svg" />
+            <h6>Kids</h6>
+          </div>
+          <div className = "icon-item">
+          <img alt="Sports" class="Image-sc-a7e7e455-1 components__NavImage-sc-995f7d35-1 cxkPKW fCugcv" src="https://u-web-assets.mercdn.net/assets/meganavCategoryIcon/8.svg" />
+            <h6>Sports</h6>
+          </div>
+          <div className = "icon-item">
+          <img alt="Handmade" class="Image-sc-a7e7e455-1 components__NavImage-sc-995f7d35-1 cxkPKW fCugcv" src="https://u-web-assets.mercdn.net/assets/meganavCategoryIcon/9.svg" />
+            <h6>Handmade</h6>
+          </div>
+          <div className = "icon-item">
+          <img alt="Office" class="Image-sc-a7e7e455-1 components__NavImage-sc-995f7d35-1 cxkPKW fCugcv" src="https://u-web-assets.mercdn.net/assets/meganavCategoryIcon/2882.svg" />
+            <h6>Office</h6>
+          </div>
+          <div className = "icon-item">
+          <img alt="Pet" class="Image-sc-a7e7e455-1 components__NavImage-sc-995f7d35-1 cxkPKW fCugcv" src="https://u-web-assets.mercdn.net/assets/meganavCategoryIcon/143.svg" />
+            <h6>Pet</h6>
+          </div>
+          <div className = "icon-item">
+          <img alt="Outdoor" class="Image-sc-a7e7e455-1 components__NavImage-sc-995f7d35-1 cxkPKW fCugcv" src="https://u-web-assets.mercdn.net/assets/meganavCategoryIcon/2633.svg" />
+            <h6>Outdoor</h6>
+          </div>
+          <div className = "icon-item">
+          <img alt="Tools" class="Image-sc-a7e7e455-1 components__NavImage-sc-995f7d35-1 cxkPKW fCugcv" src="https://u-web-assets.mercdn.net/assets/meganavCategoryIcon/3170.svg" />
+            <h6>Tools</h6>
+          </div>
+          <div className = "icon-item">
+          <img alt="Books" class="Image-sc-a7e7e455-1 components__NavImage-sc-995f7d35-1 cxkPKW fCugcv" src="https://u-web-assets.mercdn.net/assets/meganavCategoryIcon/141.svg" />
+            <h6>Books</h6>
+          </div>
+          <div className = "icon-item">
+          <img alt="Other" class="Image-sc-a7e7e455-1 components__NavImage-sc-995f7d35-1 cxkPKW fCugcv" src="https://u-web-assets.mercdn.net/assets/meganavCategoryIcon/0.svg" />
+          <h6>Other</h6>
+          </div>
+        </div>
         <div className="recommended-user">
           <p>Recommend user</p>
 
