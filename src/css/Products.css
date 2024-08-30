@@ -24,11 +24,12 @@
     padding: 10px 0;
 }
 
-.products-header {
+.products-header-modal {
     padding-right: 0;
     padding-left: 24px;
 }
 
-.products-header .back-icon {
+
+.js-modal__main._slideUp .back-icon{
     display: none;
 }
