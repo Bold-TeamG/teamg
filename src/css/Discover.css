@@ -1,5 +1,5 @@
 .discover-container {
-    margin-top: 80px;
+    margin-top: 59px;
     font-family: Arial, sans-serif;
     background-color: #fff;
     height: calc(100svh - 59px);
@@ -81,4 +81,26 @@ a {
 .back-icon {
     display: flex;
     align-items: center;
+}
+
+.icon-items{
+    display:flex;
+    align-items: center;
+    width: 90%;
+    padding:5%;
+    overflow-y: scroll;
+    scroll-snap-type: x mandatory;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.icon-item h6{
+    margin:0;
+    text-align: center;
+}
+.icon-item{
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    width:200px;
+    padding: 0 10px;;
 }
