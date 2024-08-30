@@ -30,7 +30,7 @@ export default function ProductsComponent({ postId }) {
   }, [postId]);
 
   return (
-    <div className="products-page">
+    <div className="products-page modall">
       <Searchbar keyword={postData ? postData.goods_name : ''} />
       <div className="products-container">
         {error ? (

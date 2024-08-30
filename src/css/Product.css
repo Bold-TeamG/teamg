@@ -124,3 +124,8 @@ p{
     text-decoration: none;
     color: #000;
 }
+
+.modall {
+    margin: 0;
+    text-align: left;
+}

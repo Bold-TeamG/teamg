@@ -18,7 +18,7 @@ import Detail from './Pages/Detail';
 import Notification from './Pages/NotificationSwitcher';
 import { useModal } from 'react-hooks-use-modal';
 import DM from './Pages/DM';
-　
+
 function App() {
  
   return (

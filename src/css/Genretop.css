@@ -4,6 +4,11 @@
     overflow-y: scroll;
     padding: 0 5%;
 }
+
+.bbox {
+    margin-top: 0;
+    text-align: left;
+}
 .genreDesccription {
     width: 100%;
     text-wrap: wrap;

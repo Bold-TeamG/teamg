@@ -1,5 +1,5 @@
 .products-container {
-    margin-top: 80px;
+    margin-top: 20px;
     font-family: Arial, sans-serif;
     background-color: #fff;
     height: calc(100vh - 108px);
@@ -11,4 +11,19 @@
 
 .products{
     width:100%;
+}
+.modall {
+    margin: 0;
+    text-align: left;
+}
+
+.cclose {
+    z-index: 400;
+}
+.products-header {
+    padding: 10px 0;
+}
+
+.products-header svg {
+    display: none;
 }

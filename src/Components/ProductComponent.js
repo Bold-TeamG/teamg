@@ -60,7 +60,7 @@ export default function ProductComponent({ product_id }) {
 
   return (
     <div className="product-page">
-      <div className="product-container">
+      <div className="product-container modall">
         {error ? (
           <div className="error-message">{error}</div>
         ) : (

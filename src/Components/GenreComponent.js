@@ -30,7 +30,7 @@ export default function GenreComponent({ genre_id }) {
 
     return (
         <div>
-            <div className="genreBox">
+            <div className="genreBox bbox">
                 <div className="genreDescription">
                     <h2>{genreData ? genreData.name : 'Loading...'}</h2>
                     <p>{genreData ? genreData.comment : 'Loading...'}</p>

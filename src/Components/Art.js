@@ -274,7 +274,7 @@ export default function Art() {
                         className={`js-modal__main ${isAnimating3 ? '_slideUp' : '_slideDown'}`}
                         onClick={(e) => e.stopPropagation()}
                       >
-                        <button className="js-modal__btn--close" onClick={closeModal3}>
+                        <button className="js-modal__btn--close cclose" onClick={closeModal3}>
                         ×
                         </button>
                         <ProductsComponent postId={post.product_id} />

@@ -423,7 +423,6 @@ footer {
   }
   
   .js-modal__btn--close {
-    margin-top: 40px;
     text-align: center;
     text-decoration: underline;
   }
@@ -486,20 +485,25 @@ footer {
     }
   }
   .js-modal__btn--close{
-    width:10%;
+    width:fit-content;
     font-size: 16px;
     color: #999999;
     background-color: #fff;
-    border-radius: 10px; 
-    border-color: #838383;
+    border: none;
+    text-decoration: none;
+    padding: 5px 0;
   }
+
+
   .js-modal__main._slideUp {
     animation: SlideUp .5s ease-in-out forwards;
     height: calc(100svh - 90px);
-    overflow-y: scroll;
+    overflow-y: hidden;
     scroll-snap-type: y mandatory;
     -ms-overflow-style: none;
-    scrollbar-width: none;
+    z-index: 100000;
+    display: flex;
+    flex-direction: column;
   }
   
   .js-modal__main._slideDown {

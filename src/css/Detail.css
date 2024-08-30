@@ -1,0 +1,12 @@
+.detail-content {
+    width: 100svw;
+}
+
+.video-container {
+    width: 100svw;
+    height: calc(100svh - 58.5px);
+}
+
+.video-detail {
+    width: 100svw;
+}
