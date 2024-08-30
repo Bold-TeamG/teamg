@@ -492,6 +492,7 @@ footer {
     border: none;
     text-decoration: none;
     padding: 5px 0;
+    z-index: 10000;
   }
 
 
