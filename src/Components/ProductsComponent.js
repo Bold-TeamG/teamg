@@ -31,7 +31,7 @@ export default function ProductsComponent({ postId }) {
 
   return (
     <div className="products-page modall">
-      <Searchbar keyword={postData ? postData.goods_name : ''} />
+      <Searchbar keyword={postData ? postData.goods_name : ''} className="modal-searchbar"/>
       <div className="products-container">
         {error ? (
           <div className="error-message">{error}</div>

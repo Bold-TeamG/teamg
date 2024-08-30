@@ -1,10 +1,36 @@
-.detail-content {
-    width: 100svw;
+.products-header svg  {
+    display: block;
 }
 
 .video-container {
     width: 100svw;
     height: calc(100svh - 58.5px);
+    align-items: end;
+}
+
+.comp-each {
+    position: relative;
+}
+
+.leftUp {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 8;
+}
+
+
+.under-box {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 5%;
+    width: 90%;
+    padding-bottom: 10px;
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 5%, rgba(0,0,0,0) 100%);
 }
 
 .video-detail {
