@@ -509,4 +509,11 @@ footer {
   .js-modal__main._slideDown {
     animation: SlideDown .5s ease-in-out forwards;
   }
-  
+
+  .products-header-modal {
+    width: 95%;
+    padding: 10px 0;
+  }
+  .products-header-modal svg {
+    display: none;
+}

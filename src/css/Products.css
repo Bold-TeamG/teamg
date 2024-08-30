@@ -24,6 +24,11 @@
     padding: 10px 0;
 }
 
-.products-header svg {
+.products-header {
+    padding-right: 0;
+    padding-left: 24px;
+}
+
+.products-header .back-icon {
     display: none;
 }
