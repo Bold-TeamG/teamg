@@ -121,7 +121,7 @@ export default function ProductComponent({ product_id }) {
                   postsData.map(post => (
                     <div key={post.id} className="post-item">
                       <Link to={`/detail/${post ? post.product_id : ''}`}>
-                        <img src={post.thumbnail_url || 'https://placehold.jp/100x100.png'} alt={post.title || 'Post Image'} />
+                        <img src={post.thunbnail_url || 'https://placehold.jp/100x100.png'} alt={post.title || 'Post Image'} />
                         <p>{post.title || 'Untitled Post'}</p>
                       </Link>
                     </div>
