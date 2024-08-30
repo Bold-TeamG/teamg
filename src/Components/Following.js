@@ -199,6 +199,7 @@ export default function Recommend() {
                   onClick={open}
                 />
               </div>
+              <div className='under-box'>
               <div className="texts">
                 <h3>{post.title || 'Recommend名'}</h3>
                 <p>{post.comment || 'コメントコメントコメント'}</p>
@@ -219,6 +220,7 @@ export default function Recommend() {
                     alt="Item"
                     className="item-icon side-item"
                   /></Link>
+              </div>
               </div>
             </div>
           </div>
