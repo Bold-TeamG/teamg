@@ -112,12 +112,12 @@ p{
 
 .post-item {
     width: 33%;
-
 }
 
 .post-item img {
     width: 100%;
     border-radius: 10px;
+    aspect-ratio: 3/5;
 }
 
 .post-item a {
