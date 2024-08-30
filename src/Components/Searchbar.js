@@ -13,7 +13,7 @@ export default function Searchbar({ keyword }) {
     const shouldShowBackIcon = location.pathname !== '/discover';
 
     return (
-        <div className="products-header">
+        <div className="products-header a">
             {shouldShowBackIcon && (
                 <div className="back-icon" onClick={handleBackClick}>
                     <svg 
